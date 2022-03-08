@@ -120,6 +120,9 @@ the prefix.
 
 ### VPC Sizing and Structure
 
+![image](https://user-images.githubusercontent.com/88237437/157148391-84045869-7625-4193-807a-04ca59690337.png)
+
+
 Things to keep in mind
 
 - What size should the VPC be. This will limit the use
