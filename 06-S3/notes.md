@@ -28,6 +28,18 @@ Resource policies can allow or deny anonymous principals. This is explicitly
 declared in the bucket policy itself.
 
 Each bucket can only have one policy, but it can have multiple statements.
+![image](https://user-images.githubusercontent.com/88237437/157150396-a7958524-fd7e-47fd-bece-182ce25a4e46.png)
+●	In the above example
+  ○	S3 GetObject access is allowed
+  ○	To everyone - indicated by * wildcard
+  ○	Therefore anyone can access the objects in secretcatproject bucket
+
+To resolve this issue, we can add a condition to the resource policy to filter the unknown IP addresses
+![image](https://user-images.githubusercontent.com/88237437/157150568-5e2734fb-9ceb-4d75-8df9-da66b2aa698f.png)
+
+Also, we can specify a condition in the bucket poilicy on allowing the access only if the identity has MFA enabled
+![image](https://user-images.githubusercontent.com/88237437/157150744-98f3680a-f1b7-499a-a3ed-506975d6d7cc.png)
+
 
 #### ACL's (Legacy)
 
