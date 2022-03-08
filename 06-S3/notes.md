@@ -81,6 +81,8 @@ You can use custom domains.
 
 #### Offloading
 
+![image](https://user-images.githubusercontent.com/88237437/157150946-eba8d261-09c4-4d88-82db-0b4b86c1b1b3.png)
+
 Website with top 10 animals running on the compute service EC2
 
 Take all of the images that the compute service hosts and move that to
@@ -90,6 +92,8 @@ When the compute service creates the HTML file and delivers to the user,
 it will point to S3 instead of the compute service directly.
 
 #### Out-of-band pages
+
+![image](https://user-images.githubusercontent.com/88237437/157150959-2524f6a9-ce74-4754-9a7a-4782567a8f38.png)
 
 This may be an error page to display maintenance if the server goes offline.
 
