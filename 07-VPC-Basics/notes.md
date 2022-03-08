@@ -295,6 +295,8 @@ The higher the prefix, the more specific the route, thus higher priority
 When target says **local** that means the VPC can route to the VPC itself.
 
 Local routes always take priorty and can never be updated.
+![image](https://user-images.githubusercontent.com/88237437/157148586-2d6826e0-a0af-4877-ab67-4c28546531b3.png)
+
 
 #### Internet Gateway
 
@@ -316,6 +318,7 @@ It is a managed gateway to AWS handles the performance.
 
 #### Using IGW
 
+![image](https://user-images.githubusercontent.com/88237437/157148657-8f01a5ae-65f2-4061-a060-83475f32f1d8.png)
 In this example, an EC2 instance has:
 
 - Private IP address of 10.16.16.20
@@ -341,11 +344,19 @@ It changes the packet source IP address from the linux EC2 server and puts
 on the public IP address that is routed from that instance. The IGW then
 pushes that packet on the public internet.
 
+![image](https://user-images.githubusercontent.com/88237437/157148794-d71ee5b3-eeda-4464-8d4a-658ff5cb2111.png)
+
+
 On the return, the inverse happens. As far as it is concerned it does not know
 about the private address and instead uses the instance's public IP address.
 
+![image](https://user-images.githubusercontent.com/88237437/157148826-44354896-54bd-4152-a1bf-7b8abd3b3643.png)
+
+
 If the instance uses an IPv6 address, that public address is good to go. The IGW
 does not translate the packet and only pushes it to a gateway.
+
+
 
 #### Bastion Host / Jumpbox
 
