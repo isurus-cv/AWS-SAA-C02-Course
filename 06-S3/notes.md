@@ -113,6 +113,8 @@ If you end with a large customer base you may end up with many requests.
 
 ### Object Versioning and MFA Delete
 
+![image](https://user-images.githubusercontent.com/88237437/157151202-e1d42019-3946-408c-aee9-4e605057bf1c.png)
+
 Versioning is off by default. Once it is turned on, it cannot go back.
 
 If you modify an object, the original of that object is replaced.
@@ -131,6 +133,10 @@ is not requested.
 When an object is deleted, AWS puts a **delete marker** on the object
 and hides all previous versions. You could delete this marker to enable
 the item.
+
+![image](https://user-images.githubusercontent.com/88237437/157151296-666e346c-fbbd-4332-8e07-3b27ccee000f.png)
+
+![image](https://user-images.githubusercontent.com/88237437/157151354-cc874f9f-4df8-459c-a18d-e4fd5d588865.png)
 
 To delete an object, you must delete all the versions of that object
 using their version marker.
@@ -169,7 +175,13 @@ The risk of uploading large amounts of data is reduced.
 
 Transfer rate = speed of all parts.
 
-#### S3 Accelerated Transfer (off)
+#### S3 Accelerated Transfer 
+
+**Off**
+![image](https://user-images.githubusercontent.com/88237437/157151614-ff8bfbf6-3784-47de-a739-00ddf2c043c8.png)
+
+**On**
+![image](https://user-images.githubusercontent.com/88237437/157151652-29e3d33e-7ea0-45d7-a650-fcecf88d6a9d.png)
 
 Uses the network of AWS edge locations.
 
