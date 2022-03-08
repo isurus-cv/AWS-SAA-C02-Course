@@ -1,6 +1,7 @@
 ## ELASTIC COMPUTE CLOUD (EC2) BASICS
 
 ### Virtualization 101
+![image](https://user-images.githubusercontent.com/88237437/157149301-366dfb3e-4448-427d-bcd5-67637768eaa7.png)
 
 EC2 provides Infrastructure as a Service (IAAS Product)
 
@@ -15,6 +16,8 @@ Servers are configured in three sections without virtualization
   - Can make a **system call** to the Kernel to interact with the hardware
   - If an app tries to interact with the hardware without a system call, it
   will cause a system error and can crash the server or at minimum the app
+![image](https://user-images.githubusercontent.com/88237437/157149408-feb1fe70-2a36-4579-8663-4adbd4d1b970.png)
+ 
 
 #### Emulated Virtualization - Software Virtualization
 
