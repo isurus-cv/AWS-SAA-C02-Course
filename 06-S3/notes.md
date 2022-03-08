@@ -3,6 +3,8 @@
 ### S3 Security
 
 Important: **S3 is private by default!**
+![image](https://user-images.githubusercontent.com/88237437/157150193-b7c5f119-b11b-426d-8e3b-22a11ece77fb.png)
+
 
 Only the account root user of the account that created the bucket
 have any permissions for the account.
