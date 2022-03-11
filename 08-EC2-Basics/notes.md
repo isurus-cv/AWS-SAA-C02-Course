@@ -150,9 +150,13 @@ Influcences features and capabilities with that instance
 #### EC2 Categories
 
 General Purpose - default steady state workloads with even resources
+
 Compute Optimized - Media processing, scientific modeling and gaming
+
 Memory Optimized - Processing large in-memory datasets
+
 Accelerated Computing - Hardware GPU, FPGAs
+
 Storage Optimized - Large amounts of super fast local storage. Massive amounts
 of IO per second. Elastic search and analytic workloads.
 
