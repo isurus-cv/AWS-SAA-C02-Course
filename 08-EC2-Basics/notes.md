@@ -149,18 +149,21 @@ Influcences features and capabilities with that instance
 
 #### EC2 Categories
 
-General Purpose - default steady state workloads with even resources
+- General Purpose - default steady state workloads with even resources
 
-Compute Optimized - Media processing, scientific modeling and gaming
+- Compute Optimized - Media processing, scientific modeling and gaming
 
-Memory Optimized - Processing large in-memory datasets
+- Memory Optimized - Processing large in-memory datasets
 
-Accelerated Computing - Hardware GPU, FPGAs
+- Accelerated Computing - Hardware GPU, FPGAs
 
 Storage Optimized - Large amounts of super fast local storage. Massive amounts
 of IO per second. Elastic search and analytic workloads.
 
 #### Naming Scheme
+
+![image](https://user-images.githubusercontent.com/88237437/157857125-5f8ba310-250f-4d9a-b074-fbc2406d8cec.png)
+
 
 R5dn.8xlarge - whole thing is the instance type. When in doubt give the
 full instance type
