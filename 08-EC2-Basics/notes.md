@@ -70,14 +70,16 @@ handles their own process internally. In EC2 this feature is called
 
 ### EC2 Architecture and Resilience
 
-- EC2 instances are virtual machines (OS+Resources)
+- EC2 instances are virtual machines (OS+Resources (vCPU, Memory, Local Storage, NW storage, GPU etc.))
 - Run on EC2 hosts
 - Shared hosts or dedicated hosts
   - Every customer is isolated even on the same shared hardware
   - Dedicated hosts pay for entire host, don't pay for instances
-- AZ resilient service. They run within only one AZ system.
+- AZ resilient service. They run within only one AZ system. If AZ fails then the host fails and as a result of that the instances will be failled
 
 Example AZ with an EC2 host
+
+![image](https://user-images.githubusercontent.com/88237437/157837293-82a5a460-09e1-43bd-b429-688ff9baaf03.png)
 
 - Run within single AZ
 - Local hardware such as CPU and memory
