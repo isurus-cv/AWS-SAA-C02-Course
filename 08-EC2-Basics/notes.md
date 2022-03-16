@@ -250,6 +250,12 @@ a major fault to go down.
   - If you provision a 1TB for an entire month, you're billed as such.
   - If you have half of the data, you are billed for half of the month.
 
+![image](https://user-images.githubusercontent.com/88237437/158589525-b525fcce-7bdd-4837-9427-435a248a953c.png)
+
+Architecture
+![image](https://user-images.githubusercontent.com/88237437/158589896-3558281d-c716-4330-9edd-9e9bab14da9a.png)
+
+
 Four types of Volumes:
 
 - General purpose SSD (gp2)
