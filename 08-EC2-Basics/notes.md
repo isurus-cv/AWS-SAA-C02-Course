@@ -216,8 +216,11 @@ the key and then the value will be returned. This is not mountable or
 bootable. It scales very well and can have simultanious access.
 
 **Usage**:
+
 Block Storage - bootable storage, high performance inside OS
+
 File Storage - share file system across multiple servers or clients
+
 Object Storage - large access to read/write object data at scale
 
 #### Storage Performance
