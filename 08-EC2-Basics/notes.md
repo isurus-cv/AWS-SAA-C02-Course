@@ -1,7 +1,6 @@
 ## ELASTIC COMPUTE CLOUD (EC2) BASICS
 
 ### Virtualization 101
-![image](https://user-images.githubusercontent.com/88237437/157149301-366dfb3e-4448-427d-bcd5-67637768eaa7.png)
 
 EC2 provides Infrastructure as a Service (IAAS Product)
 
