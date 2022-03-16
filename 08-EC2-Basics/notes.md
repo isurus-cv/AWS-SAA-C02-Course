@@ -216,6 +216,11 @@ with or without attached metadata. To retrieve the object, you need to provide
 the key and then the value will be returned. This is not mountable or
 bootable. It scales very well and can have simultanious access.
 
+Usage:
+Block Storage - bootable storage, high performance inside OS
+File Storage - share file system across multiple servers or clients
+Object Storage - large access to read/write object data at scale
+
 #### Storage Performance
 
 IO Block Size - size of the wheels. This determines how to split up the data.
@@ -224,7 +229,7 @@ system can accomidate in a second.
 Throughput - end speed of the race car. This can be influenced by the network
 speed for network storage. Expressed in MB/s (megabyte per second).
 
-Block Size * IOPS = Throughput
+![image](https://user-images.githubusercontent.com/88237437/158588008-ed78c7d6-0a90-4769-8a8b-f5eab55e26ac.png)
 
 This isn't the only part of the chain, but it is a simplification.
 
