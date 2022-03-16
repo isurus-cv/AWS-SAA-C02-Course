@@ -157,8 +157,10 @@ Influcences features and capabilities with that instance
 
 - Accelerated Computing - Hardware GPU, FPGAs
 
-Storage Optimized - Large amounts of super fast local storage. Massive amounts
+- Storage Optimized - Large amounts of super fast local storage. Massive amounts
 of IO per second. Elastic search and analytic workloads.
+![image](https://user-images.githubusercontent.com/88237437/158585107-aab6f620-d977-4c96-b9be-ab16de2c32c3.png)
+
 
 #### Naming Scheme
 
@@ -180,9 +182,13 @@ full instance type
 
 ### Storage Refresher
 
+#### Key Terms
+
 **Direct** local attached storage - these are physical disks on EC2
+If the disk lost or hardware fails or instance moved between hosts, the storage will be lost. 
 
 **Network** attached storage - volumes delivered over the network (EBS)
+Highly resillient
 
 **Ephemeral** storage - temporary storage. Instant store attached to EC2 host
 
@@ -197,10 +203,13 @@ create a file system on top of this, NTFS or EXT3 and then it mounts
 it as a drive or a root volume on Linux. Spinning hard disks or SSD. This
 could also be delivered by a physical volume. Has no built in structure.
 You can mount an EBS volume or boot off an EBS volume.
+![image](https://user-images.githubusercontent.com/88237437/158586320-06d00a78-34b6-46e1-8ba9-b76208e8c114.png)
+
 
 File Storage - Presented as a file share with a structure. You access the
 files by traversing the storage. You cannot boot from storage, but you
 can mount it.
+
 
 Object Storage - It is a flat collection of objects. An object can be anything
 with or without attached metadata. To retrieve the object, you need to provide
