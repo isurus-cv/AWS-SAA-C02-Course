@@ -433,6 +433,8 @@ perform at much higher volumes than EBS.
 
 If the read/write can be handled by EBS, that should be default.
 
+![image](https://user-images.githubusercontent.com/88237437/158755157-646680dc-bc5c-4832-b078-269c5f36312e.png)
+
 When to use EBS
 
 - Highly available and reliable in an AZ. Can self correct against HW issues.
@@ -453,6 +455,8 @@ When to use Instance Store
 - Stateless services, where the server holds nothing of value.
 - Rigid lifecycle link between storage and the instance.
   - This ensures the data is erased when the instance goes down.
+
+![image](https://user-images.githubusercontent.com/88237437/158755708-2f517cb0-cada-4b17-8416-80a36440ee5b.png)
 
 ### Snapshots, restore, and fast snapshot restore
 
@@ -477,6 +481,8 @@ snapshots will work properly.
 Volumes can be created (restored) from snapshots. Snapshots can be used to
 move EBS volumes between AZs. Snapshots can be used to migrate data between
 volumes.
+
+![image](https://user-images.githubusercontent.com/88237437/158756707-5cd1ee44-ec41-484f-bf0a-4bfba1af7b3f.png)
 
 #### Snapshot and volume performance
 
@@ -515,6 +521,8 @@ for EBS itself.
 
 The data is incrementally stored which means doing a snapshot every 5 minutes
 will not necessarily increase the charge as opposed to doing one every hour.
+
+![image](https://user-images.githubusercontent.com/88237437/158757560-bdc2e30a-364b-416a-9f3f-5fcb185e99ac.png)
 
 #### EBS Encryption
 
