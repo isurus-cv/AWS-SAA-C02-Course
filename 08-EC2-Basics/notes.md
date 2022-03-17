@@ -257,6 +257,7 @@ a major fault to go down.
 Architecture
 ![image](https://user-images.githubusercontent.com/88237437/158589896-3558281d-c716-4330-9edd-9e9bab14da9a.png)
 
+### EBS Volume Types
 
 Four types of Volumes:
 
