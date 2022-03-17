@@ -3,6 +3,7 @@
 ### Intro to Containers
 
 Virtualisation Problems
+![image](https://user-images.githubusercontent.com/88237437/158794038-6d3e4540-8133-4c87-8c01-0409706cb9cb.png)
 
 AWS EC2 Host : base
 AWS Hypervisor (Nitro)
@@ -17,9 +18,13 @@ duplicates. Every restart must manipulate the entire OS.
 What you want to do is run applications in their own
 isolated enviroments for their applications to run.
 
+![image](https://user-images.githubusercontent.com/88237437/158794132-8bac25b1-0571-4741-ae3d-62fcc8aacf7b.png)
+
 Containers have isolated OS from each other.
 
 #### Image Anatomy
+
+![image](https://user-images.githubusercontent.com/88237437/158794220-c919f2b3-5c6c-406a-bf6d-3e6bf7013fc5.png)
 
 Container is a running image of docker image.
 
@@ -31,6 +36,8 @@ Images are created from scratch or a base image.
 
 Images contain read only layers, images are layer onto images.
 
+![image](https://user-images.githubusercontent.com/88237437/158794282-75120278-21fc-435d-9460-8d5ca09499d2.png)
+
 Docker container is the same as a docker image, except it
 has an additional READ/WRITE layer of the container.
 
@@ -40,6 +47,8 @@ structures, they will share the parts that overlap.
 The other layers are reused between containers.
 
 #### Container Registry
+
+![image](https://user-images.githubusercontent.com/88237437/158794337-f334f759-8482-46af-89c1-ca98d189444d.png)
 
 Registry or hub of container images.
 
