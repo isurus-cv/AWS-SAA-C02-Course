@@ -273,7 +273,11 @@ HDD based focus on throughput for logs or media storage.
 
 #### General Purpose SSD (gp2)
 
+![image](https://user-images.githubusercontent.com/88237437/158726723-b6de0df4-f9b1-49aa-a349-3bb597c7fb81.png)
+
 Uses a performance bucket architecture based on the iops it can deliever.
+
+![image](https://user-images.githubusercontent.com/88237437/158727867-d9d57b24-3380-4697-bc3e-d14bde53230d.png)
 
 The GP2 starts with 5,400,000 IOPS allocated. It is available instantly.
 
@@ -289,6 +293,12 @@ This is the **baseline performance**
 This should be the default for boot volumes and some data volumes.
 
 Can only be attached to one volume at a time.
+![image](https://user-images.githubusercontent.com/88237437/158729136-c5a755d7-4c45-48f1-ad51-be44be29666e.png)
+
+
+GP3
+![image](https://user-images.githubusercontent.com/88237437/158727962-5117fc1f-601a-4a59-a369-dacd59b8ad84.png)
+
 
 #### Provisioned IOPS SSD (io1)
 
