@@ -550,6 +550,9 @@ decrypted data encryption key to move data on and off the volume. It is used
 for all cryptographic operations when data is being used to and from the
 volume.
 
+![image](https://user-images.githubusercontent.com/88237437/158780020-467a8c99-206c-4be9-a5c3-bb3b1188cbdc.png)
+
+
 When data is stored at rest, it is stored as **Ciphertext**.
 
 If the EBS volume is ever moved, the key is discarded.
@@ -558,24 +561,22 @@ If a snapshot is made of an encrypted EBS volume, the same data encryption
 key is used for that snapshot. Anything made from this snapshot is also
 encrypted in the same way.
 
+![image](https://user-images.githubusercontent.com/88237437/158780198-15a23252-f232-4370-8227-7f457ccad9e0.png)
+
+
 Everytime you create a new EBS volume from scratch, it creates a new
 data encryption key.
 
 ##### EBS Exam Power Up
 
-AWS accounts can be set to encrypt EBS volumes by default.
-It will use the default CMK unless a different one is chosen.
-Each volume uses 1 unique DEK (data encryption key)
-Snapshots and future volume use the same DEK
-Can't change a volume to NOT be encrypted. You could mount an unencrypted
-volume and copy things over but you can't change the origina volume.
-The OS isn't aware of the encryption, there is no performance loss. The data
-uses AES256
-If an exam question does not use AES256, or it suggests you need an OS to
-encrypt or hold the keys, then you need to perform full disk encryption
-at the operating system level.
-You can perform full disk encryption on an unencrypted or encrypted EBS
-volume.
+- AWS accounts can be set to encrypt EBS volumes by default.
+- It will use the default CMK unless a different one is chosen.
+- Each volume uses 1 unique DEK (data encryption key)
+- Snapshots and future volume use the same DEK
+- Can't change a volume to NOT be encrypted. You could mount an unencrypted volume and copy things over but you can't change the origina volume.
+- The OS isn't aware of the encryption, there is no performance loss. The data uses AES256
+- If an exam question does not use AES256, or it suggests you need an OS to encrypt or hold the keys, then you need to perform full disk encryption at the operating system level.
+- You can perform full disk encryption on an unencrypted or encrypted EBS volume.
 
 ### EC2 Network Interfaces, Instance IPs and DNS
 
