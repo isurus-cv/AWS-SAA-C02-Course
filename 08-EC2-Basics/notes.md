@@ -302,6 +302,8 @@ GP3
 
 #### Provisioned IOPS SSD (io1)
 
+![image](https://user-images.githubusercontent.com/88237437/158752132-e8040cbf-dfa4-4a10-b63e-96e78b42bda0.png)
+ 
 50:1 IOPS to GiB Ratio
 
 You pay for capacity and the IOPs set on the volume. This is good if your
@@ -316,6 +318,8 @@ Multi-attach allows them to attach to multiple EC2 instances at once.
 If it mentions high IOPS, or mentioning latency. Small volume sizes.
 
 #### HDD Volume Types
+
+![image](https://user-images.githubusercontent.com/88237437/158752960-eb548e0b-3e85-4b9c-af65-8834db276ff2.png)
 
 st1 - throughput
 sc1 - cold
@@ -381,6 +385,8 @@ Local physical storage that instances can utilize attached to an instance.
 The volumes are physically connected to one EC2 host. They are isolated to
 that one specific host.
 
+![image](https://user-images.githubusercontent.com/88237437/158753815-5e32e173-2641-4a44-acc5-574451943f75.png)
+
 Instances on that host can access them.
 
 Highest storage performance in AWS.
@@ -392,6 +398,8 @@ They can be attached ONLY at launch. Cannot be attached later.
 Architecturally, each instance has a collection of ephemeral volumes that are
 locked to that specific host. Even though an instance is been alocated a
 specific number of volumes, the data is locked to the host.
+
+![image](https://user-images.githubusercontent.com/88237437/158753937-fb27dce0-8a65-47a0-9778-002afad10e09.png)
 
 Instances can move between hosts for many reasons:
 
@@ -409,14 +417,17 @@ at all.
 This is much higher than EBS can provide. These volumes
 perform at much higher volumes than EBS.
 
+![image](https://user-images.githubusercontent.com/88237437/158754295-13db7f54-788b-4fdd-a934-e759ee5aea1f.png)
+
+
 #### Exam Powerup
 
 - Instance store volumes are local to EC2 host.
-- Can only be added at launch time. Cannot be added later.
-- Any data on instance store data is lost if it gets moved, or resized.
+- Can only be added at **launch time**. Cannot be added later.
+- Any data on instance store data is lost if it gets moved, resized or hardware failure.
 - Highest data performance in all of AWS.
 - You pay for it anyway, it's included in the price.
-- TEMPORARY
+- **TEMPORARY**
 
 ### EBS vs Instance Store
 
