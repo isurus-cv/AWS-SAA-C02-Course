@@ -129,6 +129,8 @@ ECS Cluster manages
 
 #### EC2 mode
 
+![image](https://user-images.githubusercontent.com/88237437/158929250-a05e8d4e-ff8e-44e7-be6c-b0fc1efefc5e.png)
+
 ECS cluster is created within a VPC. It benefits from the multiple AZs that
 are within that VPC.
 
@@ -143,6 +145,8 @@ are managed as normal EC2 instances.
 This is good because you can use spot pricing or prepaid EC2 servers.
 
 #### Fargate mode
+
+![image](https://user-images.githubusercontent.com/88237437/158929304-a50e62a7-5fce-445b-bdcf-ee3511f9f4f3.png)
 
 Removes more of the management overhead from ECS, no need to manage EC2.
 
