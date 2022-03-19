@@ -683,6 +683,8 @@ AMI's can be used to launch EC2 instance.
 
 #### AMI Lifecycle
 
+![image](https://user-images.githubusercontent.com/88237437/159104990-220fb123-e8cf-4bb7-a6b0-44adeaa45223.png)
+
 Launch
 
 EBS volumes are attached to EC2 devices using block IDs
