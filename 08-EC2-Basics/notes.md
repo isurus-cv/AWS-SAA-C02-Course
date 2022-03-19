@@ -892,3 +892,14 @@ Meta-data contains:
 - NO AUTHENTICATION or ENCRYPTED
   - Anyone who can gain access and it can and will get exposed
   - Can be restricted by local firewall
+
+Example:
+Get public IPv4 Address
+![image](https://user-images.githubusercontent.com/88237437/159109938-1dc89d4d-8c98-4c23-b87d-537edb233562.png)
+
+Get public host name
+![image](https://user-images.githubusercontent.com/88237437/159109952-d6f0d381-7e04-4da2-b5e1-c19524554f5b.png)
+
+ec2-metadata tool
+![image](https://user-images.githubusercontent.com/88237437/159109970-4766a58d-d7c7-4bd9-a12d-12aa71745318.png)
+
