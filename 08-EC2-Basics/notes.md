@@ -797,6 +797,8 @@ Used when there is a requirement to use dedicated hardware.
 ### Instance Status Checks and Autorecovery
 
 Every instance has two high level status checks
+![image](https://user-images.githubusercontent.com/88237437/159108732-29ba2212-00a8-43c7-a60f-50217146a21c.png)
+
 
 #### System Status Checks
 
@@ -819,24 +821,46 @@ This feature has four options
 - Terminate this instance: useful in a cluster
 - Reboot this instance:
 
+### Shutdown, Terminate & Termination Protection
+
+Enable termination protection
+![image](https://user-images.githubusercontent.com/88237437/159108903-60a9793e-3a79-4f57-a6b8-00b7aef067e1.png)
+
+The user should have **disableApiTermination** permission to disable the termination protection
+
+Shutdown Behavior
+![image](https://user-images.githubusercontent.com/88237437/159109012-b17bfc52-359e-4770-ae35-fd80002a4b98.png)
+
 ### Horizontal and Vertical Scaling
 
 #### Vertical Scaling
 
+![image](https://user-images.githubusercontent.com/88237437/159109110-be8ee6a5-d08e-4cb1-8d4a-7c8a7c271691.png)
+
 As customer load increases, the server may need to grow to handle more data.
 The server can increase in capacity, but this will require a reboot.
+
 Often times vertical scaling can only occur during planned outages.
+
 Larger instances also carry a $ premium compared to smaller instances.
+
 There is an upper cap on performance - instance size.
+
 No application modification is needed.
+
 Works for all applications, even monoliths (all code in one app)
 
 #### Horizontal Scaling
 
+![image](https://user-images.githubusercontent.com/88237437/159109169-0cb7a07e-5617-4f3a-9adc-89c02ca0da6b.png)
+
 As the customer load increases, this adds additional capacity.
 Instead of one running copy of an application, you can have multiple versions
 running on each server.
-This requires a load balancer.
+This requires a **load balancer**.
+
+![image](https://user-images.githubusercontent.com/88237437/159109188-a03bc2ca-a042-4c42-b8b4-d0d9f276adcc.png)
+
 When customers try to access an application, the load balancer ensures the
 servers get equal parts of the load.
 
