@@ -25,12 +25,16 @@ Table relationships use keys
 
 The Table Scehmas and relationships must be defined in advance.
 
+![image](https://user-images.githubusercontent.com/88237437/159114870-7c73abde-62bb-49a9-a8e2-1771468a66ed.png)
+
 #### Non-Relational (NoSQL)
 
 Not a single thing, and is a catch all for everything else. There is generally
 a weak or no schema.
 
 ##### Key-Value databases
+
+![image](https://user-images.githubusercontent.com/88237437/159114772-47255c20-a973-4e1e-813f-6bf482ea77a0.png)
 
 The key stores the time and the Value shows the data that wants to be recorded.
 So long as every key is unique, there is no real schema or structure.
@@ -40,6 +44,8 @@ These are really fast and highly scalable.
 This is also used for **in memory caching**
 
 ##### Wide Column Store
+
+![image](https://user-images.githubusercontent.com/88237437/159114792-3c49a5dc-52b5-40e1-8d77-99794677f637.png)
 
 DynamoDB is one type of database.
 
@@ -55,6 +61,8 @@ It can be **single key** or **composite key**. Either case, it must be unique.
 
 ##### Document
 
+![image](https://user-images.githubusercontent.com/88237437/159114568-4d27df1b-dc55-499d-a2f1-babb7502716e.png)
+
 Documents are generally formated using JSON or XML.
 
 This is an extension of a key-value store.
@@ -64,6 +72,8 @@ interations.
 
 ##### Column
 
+![image](https://user-images.githubusercontent.com/88237437/159114686-ad8f7dd4-6524-4285-95ff-4ed717c53304.png)
+
 Row Store (MySQL) - If you needed to read the price of one item you need that
 row first. If you wanted to query all of the sizes of every order, you will
 need to check for each row. Often called Online Transactional Processing (OLTP).
@@ -72,6 +82,8 @@ Column Store (Redshift) - Columns are stored together. Bad for sales style
 but good for reporting or when all values for a specific size are required.
 
 ##### Graph
+
+![image](https://user-images.githubusercontent.com/88237437/159114741-c5942c43-c5d2-4419-a867-7e1a5dbe4389.png)
 
 Relationships between things are formally defined and stored along in the
 database itself with the data. These are great for relationship driven data.
