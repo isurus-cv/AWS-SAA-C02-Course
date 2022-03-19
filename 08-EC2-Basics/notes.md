@@ -734,6 +734,9 @@ Billing is for the storage capacity for the EBS snapshots the AMI references
 - Short-term, spiky, or unpredictable workloads which can't tolerate
 any disruption.
 
+![image](https://user-images.githubusercontent.com/88237437/159107745-7dee6ba5-810d-40bd-b8f7-feb1909641f7.png)
+
+
 #### Spot Instances
 
 Up to 90% off on-demand
@@ -743,6 +746,9 @@ If the max size you set is above the spot price, you pay for the instance.
 As the spot price increases, you'll keep paying until the price increases.
 Once this price increases too much, it will terminate the instance.
 Great for data analytics when the process can occur later.
+
+![image](https://user-images.githubusercontent.com/88237437/159107867-f46b904d-a0ae-4073-9c0d-5105e4365273.png)
+
 
 #### Reserved Instance
 
@@ -755,6 +761,8 @@ Flexibility on how to pay
 - Partial upfront
 - No upfront
 
+![image](https://user-images.githubusercontent.com/88237437/159108015-39676eae-28fe-4890-818e-b093220b250a.png)
+
 Best discounts are for 3 years all up front
 Reserved in region, or AZ with capacity reservation
 Reserved takes priority for AZ capacity.
@@ -762,6 +770,29 @@ Can perform scheduled reservation when you can commit to specific time windows.
 
 If you have a known stead state usage, email usage, domain server.
 Cheapest option with no tolerance for distruption.
+
+Other types of reserved instances
+
+- Scheduled Reserved Instances
+- ![image](https://user-images.githubusercontent.com/88237437/159108415-c02d5d9b-23fc-41a7-a4fd-1786537eae0e.png)
+
+Capacity Reservations
+![image](https://user-images.githubusercontent.com/88237437/159108517-eaf9c390-8762-4b41-80ee-03a211878eba.png)
+
+EC2 Savings Plan
+![image](https://user-images.githubusercontent.com/88237437/159108620-5c417176-daf2-4dd0-a890-1e9ba7353cc4.png)
+
+#### Dedicated Hosts
+![image](https://user-images.githubusercontent.com/88237437/159108077-fdabbbab-fed2-4e17-b103-491719e64fed.png)
+
+Used for strict licencing requirments
+
+#### Dedicated Instances
+![image](https://user-images.githubusercontent.com/88237437/159108239-5acd6d67-0368-45c1-8a9f-7d01a4baa332.png)
+
+Instances are running in dedicated hardware.
+
+Used when there is a requirement to use dedicated hardware.
 
 ### Instance Status Checks and Autorecovery
 
