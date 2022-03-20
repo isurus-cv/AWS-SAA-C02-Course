@@ -54,6 +54,21 @@ The job of LB is to accept the connections from the customers and distribute tho
 - Internal LBs are generally use to separate the application tiers
 - ![image](https://user-images.githubusercontent.com/88237437/159151720-e8ac516b-03e4-44e8-b8ad-409e5cd38be0.png)
 
+![image](https://user-images.githubusercontent.com/88237437/159151809-05fea750-ee76-444a-b3b7-79b24c4c6fed.png)
+
+LBs allow each tier to sacle indepndently
+
+**Cross Zone LB**
+
+Each EC2 instance in AZ A gets 12.5% load where as the singe instance located in AZ B gets 50% of the load.
+![image](https://user-images.githubusercontent.com/88237437/159151950-8cdfe887-eae3-4571-bde0-b5c3eca713a3.png)
+
+Cross-Zone LB distributes the load
+![image](https://user-images.githubusercontent.com/88237437/159151995-4d8fd35d-4637-4ab8-807e-9b010c5e89d6.png)
+
+*For ALB this feature is enable by default*
+
+#### Others
 
 Without load balancing, it is difficult to scale.
 
