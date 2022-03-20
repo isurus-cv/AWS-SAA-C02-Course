@@ -26,16 +26,20 @@ system runs in.
 
 You can use hybrid networking to connect to the same mount targets.
 
+![image](https://user-images.githubusercontent.com/88237437/159148835-1fc52854-85ef-4f25-800d-0aaa2a6d807d.png)
+
 #### EFS Exam Powerup
 
 EFS is Linux Only
 
-Two performance modes, general purpose and max I/O performance mode.
+Two performance modes, general purpose (ideal for latency sensitive use cases, web servers, CDNs, home directories, general file serving when using linux instances) and max I/O performance mode (high latency - this is a trade-off) - (ideal for highly paralell applications - big data, media processing, sceintific analysis etc.).
 
 General purpose = default for 99.9% of uses
 
 Bursting and provisioned throughput modes.
+- Bursting mode work like GP2 volumes in EBS. More data you store, you get more throuhput
+- Provisioned mode - handles throughput requirements separately from the size. This is like IO1 volumes in EBS
 
-Two storage classes available, standard and infrequent access.
+Two storage classes available, **standard** (default, this is used to store frequent access files) and **infrequent access** (lower cost).
 
-Lifecycle policies can move data between EFS
+Lifecycle policies can move data between EFS (just like S3)
