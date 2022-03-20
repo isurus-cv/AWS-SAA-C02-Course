@@ -6,6 +6,27 @@
 
 ### Load Balancing Fundamentals
 
+### ELB Evalution
+
+Three types of load balancers available in AWS
+- Classic Load Balancer (CLB)
+- Application Load Balancer (ALB)
+- Network Load Balancers (NLB)
+
+Two versions, v1 and v2. Avoid v1 and proceed with v2
+
+Classic Load Balancer (CLB) is v1 product - Introduced in 2009
+
+CLB supports HTTP and HTTPs but it is not really a layer 7 LB. CLB support only one SSL per CLB.
+
+Application Load Balancer (ALB) is a v2 product - supports HTTP, HTTPs and WebSocket protocols
+
+Network Load Balancer (NLB) is also a v2 product - supports TCP, TLS and UDP protocols. This is the type of LB we would pick if the networking protocol is not HTTP or HTTPs. e.g.: Email servers, SSH server, Games which would use custom protocols
+
+In general, v2 are faster, cheaper, support target groups and rules
+
+### ELB Fundamentals
+
 Without load balancing, it is difficult to scale.
 
 The user connects to a load balancer that is set to listens on port 80 and 443
