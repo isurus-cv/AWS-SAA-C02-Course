@@ -32,11 +32,11 @@ You can use hybrid networking to connect to the same mount targets.
 
 EFS is Linux Only
 
-Two performance modes, general purpose (ideal for latency sensitive use cases, web servers, CDNs, home directories, general file serving when using linux instances) and max I/O performance mode (high latency - this is a trade-off) - (ideal for highly paralell applications - big data, media processing, sceintific analysis etc.).
+Two performance modes, **general purpose** (ideal for latency sensitive use cases, web servers, CDNs, home directories, general file serving when using linux instances) and **max I/O performance** mode (high latency - this is a trade-off) - (ideal for highly paralell applications - big data, media processing, sceintific analysis etc.).
 
 General purpose = default for 99.9% of uses
 
-Bursting and provisioned throughput modes.
+**Bursting** and **provisioned** throughput modes.
 - Bursting mode work like GP2 volumes in EBS. More data you store, you get more throuhput
 - Provisioned mode - handles throughput requirements separately from the size. This is like IO1 volumes in EBS
 
