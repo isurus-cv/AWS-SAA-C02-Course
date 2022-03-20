@@ -105,6 +105,8 @@ events.
 - Runs in a **runtime environment**
 - You are billed only for the duration a function runs. There is no charge
 for having lambda functions waiting and ready to go.
+- The environment has direct memory allocation. There is no direct vCPU allocation, it happens behined the scenes indirectly.
+- A key part of **Serverless** architecture in AWS
 
 #### Lambda Architecture
 
@@ -128,6 +130,8 @@ Should always use AWS services for input and output.
 
 Lambda functions can run up to 15 minutes. That is the max limit.
 
+![image](https://user-images.githubusercontent.com/88237437/159156410-abf05232-85ac-48cb-acf2-096ae9699b4e.png)
+
 #### Key Considerations
 
 - Currently 15 min execution limit
@@ -136,6 +140,14 @@ Lambda functions can run up to 15 minutes. That is the max limit.
 - Always load data from other services from public API's or S3
 - Store data to other services (e.g. S3)
 - 1M free requests and 400,000 GB-seconds of compute per month
+
+#### Common Uses
+
+- Serverless Applications (S3, API Gateway, Lambda)
+- File Processing (S3, S3 Events, Lmanda) - Image resize, waterark etc.
+- Database Triggers (DynamoDB, Streams, Lambda)
+- Serverless CRON (EventBridge/CWEvents + Lambda) - Schedule to run a certain script
+- Realtime Stream Data Processing (Kinesis + Lamnda)
 
 ### CloudWatch Events and EventBridge
 
