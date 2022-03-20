@@ -225,44 +225,19 @@ Architecturally at the heart of event bridge is the default event bus.
 
 The default event bus is moving packets of JSON data.
 
-### API Gateway
+![image](https://user-images.githubusercontent.com/88237437/159160866-52a1e3c9-aee4-49b3-8e78-b659ec1127d1.png)
 
-Application Programming Interface (API)
+#### DEMO
 
-This is a way that applications or services can communicate with each other.
+Lambda execution role - create and update CW logs & EC2 start/stop
 
-Endpoints are used to access services. Each service has its own endpoint
-in its own region.
+![image](https://user-images.githubusercontent.com/88237437/159160971-24bcda51-ecbe-4547-b044-1b9613170767.png)
 
-When you request AWS stops an EC2 instance, the message is set to the API
-in that region for that resource.
-
-APIs also perform authentication using passwords or keys. API authorizes
-each service and needs your permissions verified each time.
-
-#### Authentication
-
-#### Authorization
-
-API gateway is an AWS managed service that provides managed API endpoints.
-Allows you to create, publish, monitor, and secure APIs as a service.
-
-Billed based on the number of API calls as well as data transfered.
-
-This can be used for serverless architecture to provide an entry point
-for that design.
-
-This is great during an architecture evolution.
-
-Step 1:
-Create a managed API and point at the existing monolithic application.
-
-Step 2:
-Using API gateway allows the buisness to evolve along the way slowly.
-This might move some of the data to fargate and aurora architecture.
-
-Step 3:
-Move to a full serverless architecture with DynamoDB
+There will be 3 lambda functions created
+1. Stop instances
+2. Start instances
+3. Start an instance when it is stopped - EventBridge rule is configured to create an event when the instance is stopped
+4. Stop instance on scheduled time
 
 ### Serverless
 
@@ -303,6 +278,8 @@ DynamoDB.
 The user can then interact with another Lambda which will allow her to
 pull the media from the transcode bucket using the dynamoDB entry.
 
+![image](https://user-images.githubusercontent.com/88237437/159162204-4cb19286-bc37-4697-826a-b982bf02ddd0.png)
+
 ### Simple Notification Service (SNS)
 
 HA, Durable, and Secure service.
@@ -323,6 +300,8 @@ By default all topics will recieve the message, you can put filters on
 those lines to make sure they don't trigger additional lambdas.
 
 You can use fanout to process different flows from SQS
+
+![image](https://user-images.githubusercontent.com/88237437/159162475-e48b2dda-ccb3-478b-b1e2-5de13005101f.png)
 
 Offers:
 
@@ -365,6 +344,46 @@ These use IAM Roles for permissions.
 - Parallel : will create parallel branches based on a choice
 - Map : accepts a list of things
 - Task : Single unit of work (lambda, batch, dynamoDB)
+
+### API Gateway
+
+Application Programming Interface (API)
+
+This is a way that applications or services can communicate with each other.
+
+Endpoints are used to access services. Each service has its own endpoint
+in its own region.
+
+When you request AWS stops an EC2 instance, the message is set to the API
+in that region for that resource.
+
+APIs also perform authentication using passwords or keys. API authorizes
+each service and needs your permissions verified each time.
+
+#### Authentication
+
+#### Authorization
+
+API gateway is an AWS managed service that provides managed API endpoints.
+Allows you to create, publish, monitor, and secure APIs as a service.
+
+Billed based on the number of API calls as well as data transfered.
+
+This can be used for serverless architecture to provide an entry point
+for that design.
+
+This is great during an architecture evolution.
+
+Step 1:
+Create a managed API and point at the existing monolithic application.
+
+Step 2:
+Using API gateway allows the buisness to evolve along the way slowly.
+This might move some of the data to fargate and aurora architecture.
+
+Step 3:
+Move to a full serverless architecture with DynamoDB
+
 
 ### Simple Queue Service (SQS)
 
