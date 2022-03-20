@@ -68,7 +68,7 @@ Cross-Zone LB distributes the load
 
 *For ALB this feature is enable by default*
 
-#### Others
+#### [Obsolete]Others
 
 Without load balancing, it is difficult to scale.
 
@@ -99,10 +99,16 @@ Client is abstracted away from individual servers
 
 Used for high availability, fault tolerance, and scaling
 
+### Load Balancer Consolidation
+
+![image](https://user-images.githubusercontent.com/88237437/159152311-1054cc36-3c5e-4695-9870-7195aa33993e.png)
+
 ### Application Load Balancer (ALB)
 
 ALB is a layer 7 - it is capable of inspecting data that passes through
-it and can understand the application layer
+it and can understand the application layer (only HTTP and/or HTTPs. not SMTP, SSH, Gaming etc.)
+
+ALB can understand content-type, cookies, custome headers, user loaction and app behaviour
 
 It can take action based on things from that protocol
 
@@ -114,7 +120,7 @@ Internal load balancer is used for inside a VPC only
 
 Listens on the outside and sends to target groups
 
-#### Cross zone load balancing
+#### [Obsolote]Cross zone load balancing 
 
 Each node that is part of the load balancer is able to distribute load
 even if its not in the same AZ. It is the reason we can achieve a balanced
