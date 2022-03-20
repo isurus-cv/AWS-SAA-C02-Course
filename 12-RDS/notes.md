@@ -148,9 +148,13 @@ Performance will be slower than AWS options.
 Database-as-a-service (DBaaS) - not entirely true more of
 DatabaseServer-as-a-service. Managed Database Instance for one or more databases
 
+AWS handles Hardware, OS, Networking, Patching, Sofware updates etc..
+
 Multiple engines are MySQL, MariaDB, PostgreSQL, Oracle, Microsoft SQL
 
 Amazon Aurora. This is so different from normal RDS, it is a seperate product.
+
+![image](https://user-images.githubusercontent.com/88237437/159148537-b7c477d0-aa2e-428e-bcc0-159f1aa8399d.png)
 
 #### RDS Database Instance
 
@@ -158,19 +162,23 @@ Runs one of a few types of database engines and can contain multiple
 user created databases. Create one when you provision the instance, but
 multiple can be created after.
 
-Database connects with a CNAME. RDS uses standard database engines.
+Database connects with a CNAME (database hostname). You can't directly use the IP address of the instance to connect. RDS uses standard database engines.
+
+![image](https://user-images.githubusercontent.com/88237437/159148575-b3120b09-8a57-474f-b2a5-c527bcf05ac1.png)
 
 The database can be optimized for:
 
-- db.m5 general
-- db.r5 memory
-- db.t3 burst
+- db.m5 general purpose
+- db.r5 memory optimized
+- db.t3 burst instance
 
 There is an associated size and AZ selected.
 
 When you provision an instance, you provision storage that is dedicated
-to that instance. This is EBS storage located in the same AZ. RDS is vulnerable
-to failures in that AZ.
+to that instance. This is EBS storage located in the **same AZ**. 
+RDS is vulnerable to failures in that AZ.
+
+![image](https://user-images.githubusercontent.com/88237437/159148614-5fb59954-cd73-413b-bb4b-26eb8a59dbf1.png)
 
 The storage can be allocated with SSD or magnetic.
 
@@ -180,6 +188,9 @@ magnetic - compatibility
 
 Billing is per instance and hourly rate for that compute. You are billed
 for storage allocated.
+
+RDS is access through a security group assigned to it.
+![image](https://user-images.githubusercontent.com/88237437/159148673-ffda29ff-c89b-4eb9-bdf0-1920b7ee6aa6.png)
 
 ### RDS Multi AZ (High-Availability)
 
