@@ -97,6 +97,18 @@ stored inside the database.
 
 Relationships are fast because interactions can be queried.
 
+### ACID vs BASE
+
+![image](https://user-images.githubusercontent.com/88237437/159114974-f8c87556-a92c-4e60-b54f-ed280999bac9.png)
+
+#### ACID
+![image](https://user-images.githubusercontent.com/88237437/159115088-89f882db-c0f8-4522-bdc2-6856e9346f06.png)
+
+RDS limits scaling
+
+#### BASE
+![image](https://user-images.githubusercontent.com/88237437/159115202-5253b2b8-e939-408a-a008-707f3a426fb9.png)
+
 ### Databases on EC2
 
 It is always a bad idea to do this. Splitting an instance over different
