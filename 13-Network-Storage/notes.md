@@ -67,10 +67,12 @@ Also, we have created two EC2 instances
 ![image](https://user-images.githubusercontent.com/88237437/159149302-f3767695-4f18-483b-8999-86a0a5e62f45.png)
 
 Connect to first instance
+
 ![image](https://user-images.githubusercontent.com/88237437/159149409-d5108477-487f-44e9-a00d-9a5096ae7ac6.png)
 No EFS is mounted. We create a folder to mount the EFS
 
 Install EFS utils
+
 ![image](https://user-images.githubusercontent.com/88237437/159149446-bbace720-a318-4106-af1c-a8494b36bc77.png)
 
 We need the EFS to be mount to the folder we created everytime the instance reboots
@@ -79,8 +81,10 @@ We need the EFS to be mount to the folder we created everytime the instance rebo
 ![image](https://user-images.githubusercontent.com/88237437/159149497-fce3de8c-9955-46e3-855b-933de8618574.png)
 
 Mount the EFS
+
 ![image](https://user-images.githubusercontent.com/88237437/159149516-32725232-5063-4339-a9bc-8094b38b6d0b.png)
 
 We can mount the same EFS in other instance
+
 ![image](https://user-images.githubusercontent.com/88237437/159149559-8c4621ee-072e-4379-8ac4-9378d5582d19.png)
 
