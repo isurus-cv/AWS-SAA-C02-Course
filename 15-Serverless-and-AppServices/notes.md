@@ -147,7 +147,57 @@ Lambda functions can run up to 15 minutes. That is the max limit.
 - File Processing (S3, S3 Events, Lmanda) - Image resize, waterark etc.
 - Database Triggers (DynamoDB, Streams, Lambda)
 - Serverless CRON (EventBridge/CWEvents + Lambda) - Schedule to run a certain script
-- Realtime Stream Data Processing (Kinesis + Lamnda)
+- Realtime Stream Data Processing (Kinesis + Lambda)
+
+#### Public Lambda and Private Lambda
+
+Public Lambda
+![image](https://user-images.githubusercontent.com/88237437/159156630-e784e1fd-0fe7-4618-a3de-bc130bf6e412.png)
+
+Private Lambda
+![image](https://user-images.githubusercontent.com/88237437/159156816-0857d0c9-be6b-4193-bae3-a0a5eab34f0e.png)
+
+By Default the Lambda function has access to all the resources within the VPC without any restrications
+
+In order to access public AWS services or services available in the internet
+- Access the public AWS services via VPC endpoints
+- Setup a NAT Gateway inside a Public subnet, connect the NATGW to an internet GW, then connect to either AWS public services or internet based services
+
+Communication of VPC based Lambda with the services located in another VPC
+
+Old way
+![image](https://user-images.githubusercontent.com/88237437/159156926-ba105d36-f7c7-4c3f-9590-7f630a49b6ee.png)
+
+New way
+![image](https://user-images.githubusercontent.com/88237437/159156978-c7e9bb17-0d5f-47ab-a8fb-52ad23ce988b.png)
+
+#### Security
+![image](https://user-images.githubusercontent.com/88237437/159157105-d702d839-56eb-4878-ade6-fc5c43c3f9f3.png)
+
+#### Logging
+![image](https://user-images.githubusercontent.com/88237437/159157160-b10ad799-51c7-4255-abbe-f9e45835bc5c.png)
+
+In a scenario we are diagnosing a failure of lambda execution and no trace found in the CloudWatch, main possible reason would be the CloudWatch is not given the permission (via Execution Role) to access the lamnda.
+
+#### Invocation
+1. Synchronous
+2. Asynchronos
+3. Event Source Mappings
+
+Synchronous
+![image](https://user-images.githubusercontent.com/88237437/159157328-6071ca5a-21ca-4202-b3a9-a07e53f22e8c.png)
+
+Asynchronous
+![image](https://user-images.githubusercontent.com/88237437/159157454-fed2ea64-4b87-4a3b-9a24-26047b9ac9ba.png)
+
+Event Source Mapping
+![image](https://user-images.githubusercontent.com/88237437/159157565-84972ec4-c646-4c8c-9ef3-cbc6c3e0402e.png)
+
+#### Versions
+![image](https://user-images.githubusercontent.com/88237437/159157609-4c5285d5-7866-456e-9e1e-1ac7f2dccb97.png)
+
+#### Lambda Startup
+![image](https://user-images.githubusercontent.com/88237437/159157746-f42ef315-40e0-405b-be22-5d0ef595a68b.png) 
 
 ### CloudWatch Events and EventBridge
 
