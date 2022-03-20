@@ -15,6 +15,8 @@ was a monolithic architecture.
 - Bill together. All components are always running and always incurring charges.
 
 This is the least cost effective way to architect systems.
+![image](https://user-images.githubusercontent.com/88237437/159154856-4c4a4a05-6907-490b-b789-53d48a59fa16.png)
+
 
 #### Tiered
 
@@ -35,6 +37,9 @@ customer experience.
 
 Even if there is no job to be processed, the middle tier will need to be
 running because otherwise it would fail.
+
+![image](https://user-images.githubusercontent.com/88237437/159154861-bcc1ae36-2798-4f99-ad6c-d3cb4adc8b8e.png)
+
 
 #### Evolving with Queues
 
@@ -58,6 +63,12 @@ of the information.
 
 The autoscaling group will only bring up servers as their needed.
 
+![image](https://user-images.githubusercontent.com/88237437/159154872-38e21e2d-28a9-44d4-930a-d8cbb29916f2.png)
+
+#### Microservices Architecture
+
+![image](https://user-images.githubusercontent.com/88237437/159154902-d3a72ad3-7d5f-45c3-9a93-a183bef9a762.png)
+
 #### Event Driven Architecture
 
 Event producers - interact with customers or systems monitoring components.
@@ -71,6 +82,8 @@ In either case, there are no resources waiting around to be used.
 
 Event router is needed for event driven architecture that also manages
 an event bus.
+
+![image](https://user-images.githubusercontent.com/88237437/159154912-672f55f5-d59b-4b5e-bc1b-253e87932741.png)
 
 #### Highlights
 
