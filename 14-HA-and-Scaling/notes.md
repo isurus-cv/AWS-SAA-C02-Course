@@ -1,5 +1,9 @@
 ## HA and Scaling
 
+### Reginal and Global AWS Architecture
+
+![image](https://user-images.githubusercontent.com/88237437/159150260-24207173-6a65-4eda-b081-a7c046ddb2b8.png)
+
 ### Load Balancing Fundamentals
 
 Without load balancing, it is difficult to scale.
