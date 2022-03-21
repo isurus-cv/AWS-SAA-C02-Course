@@ -28,10 +28,14 @@ An AMI is used to launch an EC2 instance in the usual way to create
 an EBS volume that is attached to the EC2 instance. This is based on the
 block mapping inside the AMI.
 
+![image](https://user-images.githubusercontent.com/88237437/159301124-877321b1-3185-4024-82b4-a96f21a629cf.png)
+
 Now the EC2 service provides some userdata through to the EC2 instance.
 There is software within the OS running which is designed to look at the
 metadata IP for any user data. If it sees any user data, it executes
 this on launch of that instance.
+
+![image](https://user-images.githubusercontent.com/88237437/159301189-ae61aaaf-4e23-41bc-b039-68494daf43df.png)
 
 This is treated like any other script the OS runs. At the end of running
 the script, the instance will be in:
@@ -40,6 +44,8 @@ the script, the instance will be in:
 - Bad config but still likely running
   - The instance will probably still pass its checks
   - It will not be configured as you excpected
+
+![image](https://user-images.githubusercontent.com/88237437/159301299-94ed926e-4b2e-4fea-86be-612b63ef9452.png)
 
 #### User Data Key Points
 
@@ -63,10 +69,14 @@ includes the time for EC2 to configure the instance and any software
 downloads that are needed for the user.
 
 When looking at an AMI, this can be measured in minutes.
+![image](https://user-images.githubusercontent.com/88237437/159301528-110baf20-d9a7-43e4-beb7-fa851b682c5e.png)
 
 AMI baking will front load the time needed.
 
-The optimal way is to use AMI baking
+The optimal way is to use AMI baking + bootstrapping
+![image](https://user-images.githubusercontent.com/88237437/159301686-953e7cc1-35a9-4255-a7d8-b8787d63cb48.png)
+
+**Important** - We can embed the user data script inside CFN template in the EC2 creation section so that the script will be executed at the first launch of the instance
 
 ### AWS::CloudFormation::Init
 
@@ -99,6 +109,7 @@ It knows the desired state desired by the user and can work towards a
 final stated configuration
 
 This can monitor the userdata and change things as the EC2 data changes.
+![image](https://user-images.githubusercontent.com/88237437/159304264-70a0787b-a8ec-4b96-8b43-7c08ebf3d61c.png)
 
 #### CreationPolicy and Signals
 
@@ -124,6 +135,8 @@ the instance.
 When IAM roles are assumed, you are provided temporary roles based on the
 permission assigned to that role. These credentials are passed through
 instance **meta-data**.
+
+![image](https://user-images.githubusercontent.com/88237437/159304804-db0092fb-871a-40cc-a930-06f5eada7bb7.png)
 
 EC2 and the secure token service ensure the credentials never expire.
 
@@ -167,6 +180,15 @@ This is tied closely to IAM and could use long term credentials such
 as access keys, or short term use of IAM roles.
 
 Allows for simple or complex sets of parameters.
+
+**Screens from DEMO:**
+![image](https://user-images.githubusercontent.com/88237437/159311559-0b903175-c507-482b-ae8e-1777ea7027ea.png)
+
+Access parameters from the CLI
+![image](https://user-images.githubusercontent.com/88237437/159311693-912026ce-d54c-4855-b0ac-8d45af4a94d0.png)
+
+Secure Strings - with decryption
+![image](https://user-images.githubusercontent.com/88237437/159311830-3b671982-a0d9-4779-a68a-59e00c1764ee.png)
 
 ### System and Application Logging on EC2
 
