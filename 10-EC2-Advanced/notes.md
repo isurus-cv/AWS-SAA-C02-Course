@@ -220,11 +220,13 @@ management.
 
 We can use parameter store to store the configuration for the CW agent.
 
+![image](https://user-images.githubusercontent.com/88237437/159312785-817617ad-e411-47cc-980b-337020dce146.png)
+
 ### EC2 Placement Groups
 
 #### Cluser - Pack instances close together
 
-Achieves the highest level of performance available with EC2.
+Achieves the **highest level of performance** available with EC2.
 
 Best practice is to launch all of the instances within that group at the
 same time.
@@ -239,6 +241,8 @@ EC2 host.
 All members have direct connections to each other. They can achieve
 10 Gbps single stream vs 5 Gbps normally. They also have the lowest
 latency and max PPS possible in AWS.
+
+![image](https://user-images.githubusercontent.com/88237437/159317365-4245f682-7075-4252-9ab0-14dd26f52861.png)
 
 If the hardware fails, the entire cluster will fail.
 
@@ -255,6 +259,10 @@ Best practice to use the same type of instance and launch all at once.
 This is the only way to achieve **10Gbps SINGLE stream**, other data metrics
 assume multiple streams.
 
+Use cases
+- HPC
+- Scientific Analysis
+
 #### Spread - Keep instances seperated
 
 This provides the best resillience and availability.
@@ -263,13 +271,14 @@ Spread groups can span multiple AZs. Information will be put on distinct
 racks with their own network or power supply. There is a limit of 7 instances
 per AZ. The more AZs in a region, the more instances inside a spread placement
 group.
+![image](https://user-images.githubusercontent.com/88237437/159320681-fd2f968f-df96-43f8-8837-f6ffdec7a18c.png)
 
 ##### Spread Exams
 
 Provides the highest level of availability and resillience. Each instance
 by default runs from a different rack.
 
-7 instances per AZ is a hard limit.
+**7** instances per AZ is a hard limit.
 
 Not supported for dedicated instances or hosts.
 
@@ -288,6 +297,8 @@ as you desire.
 
 When you launch a partition group, you can allow AWS decide or you can
 specifically decide.
+
+![image](https://user-images.githubusercontent.com/88237437/159325126-9bfa65fb-bed6-4bdf-8110-e61edf166474.png)
 
 ##### Parition Exams
 
@@ -317,9 +328,15 @@ configure what type of instances you want to run on it. With the older
 system you cannot mix and match. The new nitro system allows for mixing and
 matching host size.
 
+OLD - one particular host can same type of instances
+![image](https://user-images.githubusercontent.com/88237437/159327153-f45ffb66-9640-4a7d-a54a-5e945ea67439.png)
+
+Nitro based
+![image](https://user-images.githubusercontent.com/88237437/159327370-cd91bb54-c5b1-403f-a631-cc7b30e8a3bb.png)
+
 #### Dedicated Hosts Limitations
 
-AMI Limits, some versions can't be used
+AMI Limits, some versions can't be used - RHEL, SUSE Linux and **Windows**
 
 Amazon RDS instances are not supported
 
@@ -342,6 +359,7 @@ It allows for higher IO and lower host CPU usage
 This provides more bandwidth and higher packet per seconds.
 
 In general this provides lower latency.
+![image](https://user-images.githubusercontent.com/88237437/159328358-5311e638-e7d1-4e4a-ba70-86410acdf01e.png) ![image](https://user-images.githubusercontent.com/88237437/159328395-3fa81ba5-7f28-44aa-a686-290747cc7410.png)
 
 #### EBS Optimized
 
