@@ -19,6 +19,27 @@ Host DNS records.
 Hosted Zones are what the DNS system refererences, it becomes Authoritative
 for a domain and visible to the public internet.
 
+![image](https://user-images.githubusercontent.com/88237437/159615159-898748f3-e254-4f4d-b8d2-832280e6740c.png)
+
+### Private Hosted Zones
+
+![image](https://user-images.githubusercontent.com/88237437/159615421-d9063143-8ba3-46a0-9320-3cb23e2fefb6.png)
+
+![image](https://user-images.githubusercontent.com/88237437/159615586-1db46923-daf7-4870-ae30-dee03c79df53.png)
+
+R53 Split View Hosted Zones
+![image](https://user-images.githubusercontent.com/88237437/159615764-99c0f6d6-53d2-49af-92f7-610819a5c6e7.png)
+
+The public internet cannot access "accounting" record since it is hosted in private zone. It can only be accessed by VPCs associated with R53
+
+### R53 CNAME vs ALIAS
+![image](https://user-images.githubusercontent.com/88237437/159616099-ff96ce84-ea5c-4682-8686-a2f91e2472da.png)
+
+![image](https://user-images.githubusercontent.com/88237437/159616331-49b23cd6-7646-4707-815f-83ddf004a1ac.png)
+
+### Simple Routing
+![image](https://user-images.githubusercontent.com/88237437/159616580-64eb6c2c-0157-4b79-b199-72e83564581f.png)
+
 ### Route 53 Health Checks
 
 Route checks will allow for periodic health checks on the servers.
