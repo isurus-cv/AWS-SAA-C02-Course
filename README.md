@@ -531,11 +531,16 @@ of finding the IP address.
 The Root Zone is organized by IANA (Internet Assigned Numbers Authority).
 Their job is to manage the contents of the root zone. IANA is in charge
 of the DNS system because they control the root zone.
+![image](https://user-images.githubusercontent.com/88237437/159613236-6e13c0c8-b528-4074-bf1d-0baf8382de53.png)
+
 
 #### 1.2.12.2. DNS Hierarchy
+![image](https://user-images.githubusercontent.com/88237437/159613398-74bba602-222b-4ae0-add6-4e3c129c310c.png)
 
 Assuming a laptop is querying DNS directly for www.amazon.com and using
 a root hints file to know how to access a root server and query the root zone.
+
+![image](https://user-images.githubusercontent.com/88237437/159613305-e1194eaa-54e3-4523-9e44-57009773716d.png)
 
 - When something is trusted in DNS, it is an **authority**.
 - One piece can be authoritative for root.
@@ -605,6 +610,7 @@ This is a numeric setting on DNS records in seconds.
 Allows the admin to specify how long the query can be stored
 at the resolver server.
 If you need to upgrade the records, it is smart to lower the TTL value first.
+![image](https://user-images.githubusercontent.com/88237437/159614143-29a8bab2-4579-4918-9b28-6a763a4e48e2.png)
 
 Getting the answer from an Authoritative Source is known as an
 **Authoritative Answer**.
