@@ -76,6 +76,8 @@ There are three types of checks.
 - Cloudwatch alarms
 - Checks of checks
 
+![image](https://user-images.githubusercontent.com/88237437/159914378-f52b53f8-892f-4b1d-a8b0-c7cb0967b096.png)
+
 ### Route 53 Routing Policies
 
 6 types
@@ -91,6 +93,9 @@ as the simple policy except for the response. Route 53 knows the health of
 both instances. As long as the primary is healthy, it will respond with
 this one. If the health check with the primary fails, the backup will be
 returned instead. This is set to impliment active - passive failover.
+
+![image](https://user-images.githubusercontent.com/88237437/159914792-6f8c03b1-05ed-4214-b2ef-155468824599.png)
+
 
 - Weighted : Create multiple records of the same name within the hosted zone.
 For each of those records, you provide a weighted value. The total weight
