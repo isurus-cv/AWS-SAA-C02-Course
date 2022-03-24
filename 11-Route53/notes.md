@@ -18,6 +18,8 @@ Host DNS records.
 
 Hosted Zones are what the DNS system refererences, it becomes Authoritative
 for a domain and visible to the public internet.
+![image](https://user-images.githubusercontent.com/88237437/159875334-5046f424-e0e5-4822-b3fa-0bfc8d2248f8.png)
+
 
 ![image](https://user-images.githubusercontent.com/88237437/159615159-898748f3-e254-4f4d-b8d2-832280e6740c.png)
 
