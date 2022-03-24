@@ -80,7 +80,7 @@ There are three types of checks.
 
 ### Route 53 Routing Policies
 
-6 types
+7 types
 
 - Simple : Route traffic to a single resource. Client queries the resolver
 which has one record. It will respond with 3 values and these get forwarded
@@ -104,11 +104,14 @@ parts of the same name are healthy, it will distribute the load based
 on the weight. If one of them fails its health check, it will be skipped over
 and over again until a good one gets hit. This can be used for migration
 to seperate servers.
+![image](https://user-images.githubusercontent.com/88237437/159920782-3c851e4c-a736-4b9f-a611-08a5f87c4e52.png)
+
 
 - Latency-based : Multiple records in a hosted zone can be created with
 the same name and same type. When a client request arrives, it knows which
 region the request comes from. It knows the lowest latency and will respond
 with the lowest latency.
+![image](https://user-images.githubusercontent.com/88237437/159921242-6123334d-f50d-44cd-b6ee-beb736146103.png)
 
 - Geolocation : Focused to delivering results matching the query of your
 customers. The record will first be matched based on the country if possible.
@@ -117,7 +120,23 @@ Finally, if nothing matches again it will respond with the default response.
 This can be used for licensing rights. If overlapping regions,
 the priority will always go to the most specific or smallest region. The US
 will be chosen over the North America record.
+![image](https://user-images.githubusercontent.com/88237437/159922623-de75e698-fd50-4592-9866-f7017f134ebb.png)
 
 - Multi-value : One record with one name and multiple values in this record.
 These will be health checked and the unhealthy responses will automatically
 be removed.
+![image](https://user-images.githubusercontent.com/88237437/159920334-f62d98ff-1164-40fb-87e7-79c78fce0e07.png)
+
+- Geoproximity Routing: Returns the resource located in the lowest distance.
+![image](https://user-images.githubusercontent.com/88237437/159923602-40728f92-0820-476e-9fd3-827357637f9f.png)
+
+
+### Route53 Interoperability
+![image](https://user-images.githubusercontent.com/88237437/159924078-8a0b70a2-b5b5-4e24-a566-522427b2f344.png)
+
+![image](https://user-images.githubusercontent.com/88237437/159924586-e20811e8-d544-4c1c-b91c-9a06941f7ab9.png)
+
+![image](https://user-images.githubusercontent.com/88237437/159924803-222d10df-ba23-4601-b968-bc03eddcaab6.png)
+
+![image](https://user-images.githubusercontent.com/88237437/159925491-7451058d-ff7e-4806-bef3-15b5a4109b1e.png)
+
