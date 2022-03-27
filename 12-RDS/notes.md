@@ -206,10 +206,14 @@ The standby replica cannot be used for extra capacity.
 3. Same time as the write is happening, standby replication is happening
 4. Standby replica commits writes.
 
+![image](https://user-images.githubusercontent.com/88237437/160263901-60e98736-2808-4b30-9fb4-e55c14c0d2b0.png)
+
 If any error occurs with the primary database, AWS detects this and will
 failover within 60 to 120 seconds to change to the new database.
 
-This does not provide fault tolerance - there will be some impact during change
+![image](https://user-images.githubusercontent.com/88237437/160263911-8b2e14e6-83d9-4b3f-afe9-574306f0ddab.png)
+
+**This does not provide fault tolerance - there will be some impact during change**
 
 Exam Powerups
 
@@ -236,6 +240,8 @@ RTO - Recovery Time Objective
 - Time between the DR event and full recovery
 - Influenced by process, staff, tech and documentation
 
+![image](https://user-images.githubusercontent.com/88237437/160265592-0e685293-85ab-42af-8c63-1a52c042d5f0.png)
+
 **RDS Backups**
 
 First snap is FULL size of consumed data. If you are you using single AZ
@@ -254,16 +260,18 @@ both the snapshots and the translation logs.
 When you delete the database, they can be retained but they will expire
 based on their retention period.
 
-#### RDS Exam Powerups
+![image](https://user-images.githubusercontent.com/88237437/160265614-7b9ef22b-2808-42bb-b1c4-7833173b7bdc.png)
 
-When performing a restore, RDS creates a new RDS with a new endpoint address.
+#### RDS Backup and Restore Exam Powerups
+
+When performing a restore, RDS creates a **new RDS** with a **new endpoint address**.
 
 When restoring a manual snapshot, you are setting it to a single point
 in time. This influences the RPO value.
 
 Automated backups are different, any 5 minute point in time.
 
-Backups are restored and transaction logs are replayed to bring DB to
+Backups are restored and transaction logs are **replayed** to bring DB to
 desired point in time.
 
 Restores aren't fast, think about RTO.
@@ -272,10 +280,12 @@ Restores aren't fast, think about RTO.
 
 Kept in sync using **asyncronous replication**
 
-It is written fully to the primary instance. Once its stored on disk, it
+Data is written fully to the primary instance. Once its stored on disk, it
 is then pushed to the replica. This means there could be a small lag.
 These can be created in the same region or a different region. This is a
 **cross region replication**
+
+![image](https://user-images.githubusercontent.com/88237437/160265861-9e45e3b5-e744-420d-89a7-ee3b6181dfcb.png)
 
 #### Why do these matter
 
@@ -291,7 +301,7 @@ Availability Improvements
 
 - Snapshots and backups improve RPO
 - These don't help RTOs
-- These offer near 0 RPO
+- These (read replicas) offer near 0 RPO
 - If the primary instance fails, you can promote a read-replica to take over
 - Once it is promoted, it allows for read and write
 - Only works for failures, these can replicate data corruption, default back
