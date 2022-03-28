@@ -159,6 +159,8 @@ Launch templates
 
 If you need to adjust a configuration, you must make a new one and launch it.
 
+![image](https://user-images.githubusercontent.com/88237437/160437737-408897e7-ccb7-43e8-affc-9e3021e60ac2.png)
+
 ### Auto Scaling Groups
 
 Automatic scaling and self-healing for EC2
@@ -185,14 +187,20 @@ Scheduled Scaling - time based adjustments
 Dynamic Scaling
 
 - Simple : If CPU is above 50%, add one to capacity
+- ![image](https://user-images.githubusercontent.com/88237437/160445255-d952b180-02d0-42e7-8de6-2dcaf7ca43a8.png)
 - Stepped : If CPU usage is above 50%, add one, if above 80% add three
+- ![image](https://user-images.githubusercontent.com/88237437/160445290-848e949f-14a6-4c2b-8f09-99867811230a.png)
 - Target : Desired aggregate CPU = 40%, ASG will achieve this
 
 Cooldown Period - How long to wait at the end of a scaling action before scaling again.
 
-Always use cool downs to avoid rapid scaling.
+Always use cool downs to **avoid rapid scaling**.
+
+![image](https://user-images.githubusercontent.com/88237437/160439793-f80e3844-79f7-4e87-9aec-e968634337a3.png)
 
 AGS can use the load balancer health checks rather than EC2.
+
+![image](https://user-images.githubusercontent.com/88237437/160440103-0cd98a8f-e8fb-4bfa-9bf3-5e5b61dde0cd.png)
 
 Autoscaling Groups are free  
 
@@ -201,6 +209,16 @@ Think about more, smaller instances to allow granularity
 You should use ALB with autoscaling groups.
 
 ASG defines when and where, Launch Template defines what.
+
+#### Lifecycle Hooks
+
+![image](https://user-images.githubusercontent.com/88237437/160446100-0fe3dfde-9584-416f-bcd3-fae6b52954a5.png)
+
+![image](https://user-images.githubusercontent.com/88237437/160446545-95163b53-2713-4987-9493-2970a3e891b9.png)
+
+#### Health Checks
+
+![image](https://user-images.githubusercontent.com/88237437/160446992-917004f0-da06-4e27-9de1-2267f9550b74.png)
 
 ### Network Load Balancer (NLB)
 
@@ -248,6 +266,8 @@ The EC2 will need matching SSL certificates.
 Needs the compute for the cryptographic operations. Every EC2 instance must
 peform these cryptographic operations.
 
+![image](https://user-images.githubusercontent.com/88237437/160447776-34d26fa9-4280-47cd-9a60-e979cf0a64cb.png)
+
 #### Pass-through
 
 The client connects, but the load balancer passes the connection along without
@@ -261,6 +281,8 @@ needs to be seen by AWS.
 Negative is you don't get any load balancing based on the HTTP part
 because that is never exposed to the load balancer.
 
+![image](https://user-images.githubusercontent.com/88237437/160448220-8c4f5069-fbca-426b-ad26-f345732579b0.png)
+
 #### Offload
 
 Clients connect to the load balancer using HTTPS and are terminated on the
@@ -270,11 +292,15 @@ required on the load balancer, this is not needed on the LB.
 
 Data is in plaintext form across AWS's network. Not a problem for most.
 
+![image](https://user-images.githubusercontent.com/88237437/160448395-3e5ed806-ef44-4132-88d0-da792e21f8c3.png)
+
 #### Connection Stickiness
 
 If there is no stickiness, each time the customer logs on they will have
 a stateless experience. If the state is stored on a particular server,
 sessions can't be load balanced across multiple servers.
+
+![image](https://user-images.githubusercontent.com/88237437/160449131-6ea1fbc7-d371-4e30-9e3a-30a29e1884e7.png)
 
 Session Stickiness is an option. If enabled, the first time a user makes a
 request, the load balancer generates a cookie called AWSALB. A valid duration
@@ -285,5 +311,7 @@ the same backend instance. This will happen until:
 server.
 - The cookie could expire, the whole process will repeat and will recieve a
 new cookie and the process will start again.
+
+![image](https://user-images.githubusercontent.com/88237437/160449673-8755b1f7-9353-455d-a9cd-cc68fd5cd931.png)
 
 This could cause backend unevenness
