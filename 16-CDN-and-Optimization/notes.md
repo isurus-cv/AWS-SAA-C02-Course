@@ -21,6 +21,8 @@ third party server system.
 Regional Edge Cache - larger version of an edge location. Provides
 another layer of caching.
 
+![image](https://user-images.githubusercontent.com/88237437/165128005-f3b3793b-1603-4386-b69c-1f27cd76e719.png)
+
 #### Caching Optimisation
 
 Parameters can be passed on the url such as query string parameter.
