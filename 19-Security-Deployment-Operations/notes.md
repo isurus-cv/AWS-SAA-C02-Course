@@ -30,6 +30,8 @@ The authenticaion in RDS is also rotated automatically.
 
 Secrets are secured via KMS which ensures role seperation.
 
+![image](https://user-images.githubusercontent.com/88237437/165134049-2bd27755-8937-4b3d-9888-31dc4ae898de.png)
+
 ### AWS Shield and WAF (Web Application Firewall)
 
 Provides against DDoS attacks with AWS resources. This is a denial of
