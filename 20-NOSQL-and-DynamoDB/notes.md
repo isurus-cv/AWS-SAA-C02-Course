@@ -51,6 +51,9 @@ Capacity is set per WCU or RCU
 1 WCU means you can write 1KB per second to that table
 1 RCU means you can read 4KB per second for that table
 
+![image](https://user-images.githubusercontent.com/88237437/165103919-2a7a131c-1442-42f0-a230-e0e6c2c609f2.png)
+
+
 #### Backups
 
 On-demand Backups : Similar to manual RDS snapshots. Full backup of the table
@@ -58,13 +61,19 @@ that is retained until you manually remove that backup. This can be used to
 restore data in the same region or cross-region. You can adjust indexes, or
 adjust encryption settings.
 
+![image](https://user-images.githubusercontent.com/88237437/165104122-7ab2fb0b-838d-43a9-a84a-bc8c71fe8150.png)
+
+
 Point-in-time Recovery : Must be enabled on each table and is off by
 default. This allows continous record of changes for 35 days to allow you to
 replay any point in that window to a 1 second granularity.
 
+![image](https://user-images.githubusercontent.com/88237437/165104233-b0476738-63da-4bf6-aa67-f45f0da6eee5.png)
+
+
 #### Considerations
 
-If you see NoSQL, you should jump towards DynamoDB.
+If you see **NoSQL**, you should jump towards DynamoDB.
 
 If you see relational data, this is not DynamoDB.
 
@@ -111,15 +120,20 @@ Query accepts a single PK value and **optionally** a SK or range.
 Capacity consumed is the size of all returned items. Further filtering
 discards data, capacity is still consumed.
 
+![image](https://user-images.githubusercontent.com/88237437/165106601-ad245d31-1294-4d39-ae92-60c16bbfff2a.png)
+
+
 In this example you can only query for one weather station.
 
 If you Query a PK it can return all fields items that match. It is always
 more efficent to pull as much data as needed per query to save RCU.
 
+![image](https://user-images.githubusercontent.com/88237437/165106641-69024684-75d6-45f2-ab6c-75ded07a46aa.png)
+
 You have to query for at least one item of PK and are charged for the
 response of that query operation.
 
-If you filter data and only look at one attribute, you will still be
+If you filter data and only look at one attribute (column), you will still be
 charged for pulling all the attributes against that query.
 
 #### Scan
@@ -131,6 +145,8 @@ of every item. Even if you consume less than the whole table, it will
 charge based on that. It adds up all the values scanned and will charge
 rounding up.
 
+![image](https://user-images.githubusercontent.com/88237437/165107679-983eb29d-15f1-4aad-a6be-02e857200ec0.png)
+
 #### DynamoDB Consistency Model
 
 Eventually Consistent : easier to impliment and scales better
@@ -140,10 +156,14 @@ Strongly (Immediatly) Consistent : more costly to achieve
 Every piece of data is replicated between storage node. There is one
 Leader storage node and every other node follows.
 
+![image](https://user-images.githubusercontent.com/88237437/165109619-15c88367-0129-47c7-a0cc-dc897fcb283e.png)
+
 Writes are always directed to the **leader node**. Once the leader
 is complete, it is **consistent**. Once the leader node has the new
 data it immediatly starts the process of replication. This typically
 takes miliseconds and assumes the lack of any faults on the storage nodes.
+
+![image](https://user-images.githubusercontent.com/88237437/165109702-bf9f1047-753c-4ad7-a465-f59dca6b5718.png)
 
 Eventual consistent reads check 1/3 nodes. Could be unlucky with stale data
 if a node is checked before replication completes. You get a discount
@@ -151,6 +171,8 @@ for this risk.
 
 A strongly consistent read always uses the leader node and is less
 scalable.
+
+![image](https://user-images.githubusercontent.com/88237437/165109802-63254ac7-efb2-4618-99c8-6173163e1d8a.png)
 
 Not every application can tolerate eventual consistency. If you have a stock
 database or medical information, you must use strongly consistent reads.
@@ -199,6 +221,9 @@ There are four view types that it can be configured with:
 Pre or post change state might be empty if you use
 **insert** or **delete**
 
+![image](https://user-images.githubusercontent.com/88237437/165118857-4514df44-0ed6-46da-9018-52ebfa2040c4.png)
+
+
 #### Trigger Concepts
 
 Allow for actions to take place in the event of a change in data
@@ -214,6 +239,9 @@ This is great for reporting and analytics in the event of changes.
 Good for data aggregation for stock or voting apps. This
 can provide messages or notifications and eliminates the
 need to poll databases.
+
+![image](https://user-images.githubusercontent.com/88237437/165120779-1fa03e9b-3c71-4dc9-8b17-07fbe91cadbd.png)
+
 
 ### DynamoDB Local (LSI) and Global (GSI) Secondary Indexes
 
@@ -250,6 +278,9 @@ This ensures the LSI will only include data that you want to view.
 
 It makes a smaller table and makes **scan** operates easier.
 
+![image](https://user-images.githubusercontent.com/88237437/165112302-92f117ec-82a6-4236-916a-83c5dcc91509.png)
+
+
 #### Global Secondary Index (GSI)
 
 Can be created at any time and much more flexible.
@@ -264,6 +295,10 @@ You can then choose which attributes are included in this table.
 
 GSIs are **always** eventually consistent. Replication between
 base and GSI is Async
+
+![image](https://user-images.githubusercontent.com/88237437/165113254-995d0e64-972f-4347-87d1-b537363e33a4.png)
+
+Partition key is the Alarm attribute and the sort key is the weather station ID (See the difference: in the base table the patition key is the station ID)
 
 #### LSI and GSI Considerations
 
@@ -303,6 +338,9 @@ Replication is generally sub-second and depends on the region load.
 
 Provides Global HA and disaster recovery easily.
 
+![image](https://user-images.githubusercontent.com/88237437/165121819-ceddc924-ea85-4d1d-a154-dec2a1bce281.png)
+
+
 ### DynamoDB Accelerator (DAX)
 
 This is an in memory cache for Dynamo.
@@ -316,6 +354,8 @@ DAX : The application instance has DAX SDK added on. DAX and dynamoDB are one
 in the same. If DAX has the data then the data is returned direclty. If not
 it will talk to Dynamo and get the data. This is one set of API calls and
 is much easier for the developers.
+
+![image](https://user-images.githubusercontent.com/88237437/165123853-7270668d-bbca-470c-bd64-159919d82d7d.png)
 
 #### DAX Architecture
 
@@ -340,6 +380,9 @@ Any cache miss can be returned in single digit miliseconds.
 
 When writing data to DAX, it can use write-through. Data is written to the
 database, then written to DAX.
+
+![image](https://user-images.githubusercontent.com/88237437/165123928-76a645b5-0d54-4381-a40a-5eaacdc83316.png)
+
 
 #### DAX Considerations
 
