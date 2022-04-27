@@ -352,6 +352,8 @@ With Aurora you can have up to 15 replicas and any of them
 can be a failover target. The failover operation will be quicker because
 it doesn't have to make any storage modifications. 
 
+![image](https://user-images.githubusercontent.com/88237437/165541743-98aa6877-aaa8-4377-95a1-c611b602de58.png)
+
 Cluster shared volume is based on SSD storage by default so high IOPS and low
 latency.
 
@@ -371,6 +373,8 @@ Reader endpoint - will load balance over the available replicas
 
 As additional replicas are used for reads, this is load balanced over
 replicas.
+
+![image](https://user-images.githubusercontent.com/88237437/165541570-fc3b2c36-9580-4dec-8f55-957e7b724c8c.png)
 
 #### Costs
 
@@ -414,10 +418,16 @@ storage.
 
 They have access to cluster storage in the same way.
 
+![image](https://user-images.githubusercontent.com/88237437/165542111-a2cdaa55-a5aa-4f46-906e-f08b0c52840d.png)
+
+
 There is a shared proxy fleet. When a customer interacts with the data
 they are actually communicating with the proxy fleet. The proxy fleet
 brokers an application with the ACU and ensures you can scale in and out
 without worrying about usage.
+
+![image](https://user-images.githubusercontent.com/88237437/165542183-71b75242-662a-4a2f-b5fb-d4f377022a8e.png)
+
 
 #### Aurora Serverless - Use Cases
 
@@ -440,6 +450,8 @@ tied to more people, that's fine.
 
 Replication from primary cluster volume to secondary replicas for read
 operations.
+
+![image](https://user-images.githubusercontent.com/88237437/165542609-02f5ca63-59d0-4e53-8cf5-9f41d70049ca.png)
 
 Great for cross region disaster recovery and buisness continuity.
 
@@ -483,14 +495,31 @@ In a Multi-master cluster, it will then copy into other masters.
 
 This ensures storage is updated on in-memory cache's
 
+![image](https://user-images.githubusercontent.com/88237437/165544549-265ba265-34f4-4ad3-876c-d55695bccfcb.png)
+
 If a writer goes down in a multi-master cluster, the application will shift
 all future load over to the new writter with little to no downtime.
+
+#### Failover - Aurora Standard vs Multi Master
+
+Standard - takes time
+![image](https://user-images.githubusercontent.com/88237437/165544909-80dc6ef3-4b24-438c-9715-f9c3e32e7f38.png)
+
+Multi Master - little to none disruption
+![image](https://user-images.githubusercontent.com/88237437/165545110-488a933c-f6f4-4817-ac39-1997ba1b1290.png)
+
 
 ### Database Migration Service (DMS)
 
 A managed database migration service. This runs using a replication instance.
 
+![image](https://user-images.githubusercontent.com/88237437/165546804-d98f4c08-3e74-4ec9-8483-bccf1245e015.png)
+
 Need to define the source and destination endpoints. These point at the
 physical source and target databases.
 
 One endpoint MUST be on AWS.
+
+![image](https://user-images.githubusercontent.com/88237437/165547330-fff2110a-bda3-4b72-9572-df3ca8a10fe9.png)
+
+![image](https://user-images.githubusercontent.com/88237437/165547582-795181c3-7958-49b7-b600-bbaeb554cc25.png)
