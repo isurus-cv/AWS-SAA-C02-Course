@@ -154,7 +154,6 @@ Multiple engines are MySQL, MariaDB, PostgreSQL, Oracle, Microsoft SQL
 
 Amazon Aurora. This is so different from normal RDS, it is a seperate product.
 
-![image](https://user-images.githubusercontent.com/88237437/159148537-b7c477d0-aa2e-428e-bcc0-159f1aa8399d.png)
 
 #### RDS Database Instance
 
