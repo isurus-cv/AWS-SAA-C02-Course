@@ -40,7 +40,8 @@ HTTPS can be used in CloudFront with the help of AWS Certificate Manager (ACM)
 
 **CloudFront is download style operations only, any uploads directly go to the Origins**
 
-![Uploading image.png…]()
+Behaviours
+![image](https://user-images.githubusercontent.com/88237437/165744582-1c9e5166-32db-40ab-aa8f-74344ee47680.png)
 
 #### Caching Optimisation
 
