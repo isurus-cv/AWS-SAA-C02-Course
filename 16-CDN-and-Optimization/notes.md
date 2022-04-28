@@ -30,7 +30,7 @@ another layer of caching.
 
 - A user uploads an image to a S3 bucket
 - The user configures the distribution and sets the S3 bucket as an origin
-- The distribution is given a domain name, eg: http://asdfdsfasd.cloudfront.net. We can directly use this domain name as the url for the object. But we can assign an alias like *http://animalsforlife.org* as required
+- The distribution is given a domain name, eg: http://asdfdsfasd.cloudfront.net. We can directly use this domain name as the url for the object. But we can assign an CNAME like *http://animalsforlife.org* as required
 - The distribution will be added to the each Edge location
 - When Julie request for the image, she will be directed to the closest edge location. If the image is not found in that edge location (cache miss), then it looks for the reginal edge location. If still the image is not exists in the reginal edge location, it will retrive the image from the origin, then store it in the reginal edge location, forward it to the respective edge location. The edge location will cache it and forward the image back to Julie
 
