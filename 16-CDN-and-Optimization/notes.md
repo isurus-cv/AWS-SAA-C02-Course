@@ -51,6 +51,43 @@ An example is `?language=en` and `?language=es`
 To get the cached copy, you need to use the same query strings. If you do
 use them, ensure the strings are in the same order.
 
+### TTL and Invalidations
+
+![image](https://user-images.githubusercontent.com/88237437/165921872-c3270e40-141c-4992-b8f2-a5812999e253.png)
+
+- A user request for an image from the edge location
+- The image is not cached in the edge location
+- Edge location will request the image from the Origin
+- Image is received by the edge location, it caches the image and send back to the requested user
+
+
+![image](https://user-images.githubusercontent.com/88237437/165922130-81791ddf-8f6f-4b50-b285-66d5e0d630ef.png)
+
+- Now the image has been replaced with a better one
+- When a user request the image from the edge location, it returns the cached image
+- The cached image is not the latest image stored at the Origin, therefore the user is getting an obsolete image
+
+![image](https://user-images.githubusercontent.com/88237437/165922400-e15d8f4f-e66d-4a61-b144-2108d2b5181f.png)
+
+- At some point, every cached object at the edge location will expire
+- After expiary, the object is not removed until a user request for the image from the edge location
+
+![image](https://user-images.githubusercontent.com/88237437/165922664-28e4432e-3691-44ee-910c-70ba5f36bfc8.png)
+
+- When a new user request for the image, the edge location will not immediately return the cached image
+- Instead, it forwards the request to the Origin
+- The origin compares the versions of the images. If the version of the origin is same as the one in edge location, then it will return 304 Not Modified response
+- Edge location will send the cached image to the user
+
+![image](https://user-images.githubusercontent.com/88237437/165923087-e29a78d2-588a-4d03-896a-64e90801c548.png)
+
+- When the version of at the origin is later than the one in edge location, then the origin will return the new image with 200 OK response
+- The Edge location will cache the image and forward to the user
+
+The issue here is, even after the object is replaced with a new version, the user two is getting an old object until the cache expires.
+
+
+
 ### AWS Certificate Manager (ACM)
 
 - HTTP lacks encryption and is insecure
