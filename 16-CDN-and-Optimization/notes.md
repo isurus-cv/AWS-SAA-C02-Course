@@ -146,6 +146,39 @@ Cloudfront must have a trusted and signed certificate. It **can't be self signed
 - There will be two SSL connections: Viewer ==> CF and CF ==> Origin
 - In order to work this setup, both the certificates need to be valid public certificates  
 
+### SNI - Server Name Identification
+![image](https://user-images.githubusercontent.com/88237437/165945416-4a1899c2-bff2-4821-b701-24ae2717dc73.png)
+
+- A web server has one single IP
+- Historycally every SSL enabled website needs its own IP
+- Browsers establish the connection with the web servers using TLS but TLS does not have a way to tell the server what website need to be accessed (when multiple sites are hosted in same server)
+- HTTP connections can indicate which site to be accessed by providing headers in the request but HTTP connection is made after TLS connection is established
+- In order to resolve this issue, an extension to the TLS is added. It is called SNI or Server Name Identification, which can be used to pass which website need to be accssed
+- This is resulting in many SSL certificates are using same shared IP
+- Older browsers does not support SNI, which will cost more to setup dedicated IP for each distribution in CF for older browser support
+
+![image](https://user-images.githubusercontent.com/88237437/165946972-dfc51c4e-2a2a-4d3a-b432-89130078e5ae.png)
+
+### Origin Types and Architecture
+
+![image](https://user-images.githubusercontent.com/88237437/165948713-a8aa3bfa-3f02-40aa-883c-74932a90f8a0.png)
+
+![image](https://user-images.githubusercontent.com/88237437/165948746-04762a5f-7aac-466e-b483-e0d2028f9b64.png)
+
+![image](https://user-images.githubusercontent.com/88237437/165948782-611e952f-ece7-4c28-923f-1e2dc66e0a8e.png)
+Origin or the origin group is set in the behaviour
+
+![image](https://user-images.githubusercontent.com/88237437/165948886-c18356bb-41e1-4836-81dc-3b22c7c2d43e.png)
+S3 origins
+- Origin access identity can be set to restrict the access to the origin content
+
+![image](https://user-images.githubusercontent.com/88237437/165949165-82d16454-dee5-4cfc-82e4-1ed974ea2b1d.png)
+Custom origins
+
+![image](https://user-images.githubusercontent.com/88237437/165949266-9e60d145-11d0-40a5-a891-eacce9074df9.png)
+- Custom headers can be used to restrict the access
+
+
 ### Origin Access Identity (OAI)
 
 This identity can be associated with a cloud front distribution.
