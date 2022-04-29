@@ -131,6 +131,20 @@ Cloudfront must have a trusted and signed certificate. It **can't be self signed
 
 ![image](https://user-images.githubusercontent.com/88237437/165927879-69d36ca2-d4c2-44b7-ad46-9d8406001638.png)
 
+### CloudFront and SSL
+
+- Each cloud front distribution receives a default domain name when it is created (CNAME). eg: https://dfasfdfasdfsdf.cloudfront.net
+- We can enable the HTTPS access to the distribution by default as long as you use this address: \*.cloudfront.net
+- Most of the times we have to use custom domains for the distibution, eg: cdn.catagram.io
+- We can point this custom name to the CF distribution using R53
+- We should add a certificate that matches the alternative domain name to the cloudfront ditribution to work this 
+- In order to do this, either we have to generate or import a certificate using ACM
+- For the regional services, the genarated certificates should be located in the same region as the service located
+- For global services, the certificate is created or added in **US-EAST-1**
+- There are some options can be set in the Behaviour settings for HTTP and HTTPS
+- Allow HTTP or HTTPS, Redirect HTTP to HTTPS and HTTPS only
+- There will be two SSL connections: Viewer ==> CF and CF ==> Origin
+- In order to work this setup, both the certificates need to be valid public certificates  
 
 ### Origin Access Identity (OAI)
 
