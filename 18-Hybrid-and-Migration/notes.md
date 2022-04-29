@@ -1,5 +1,12 @@
 ## Hybrid Enviroment and Migration
 
+### Broder Gateway Protocol (BGP)
+
+![image](https://user-images.githubusercontent.com/88237437/165965301-77331637-7cb9-4512-928a-dc7b87acce30.png)
+
+![image](https://user-images.githubusercontent.com/88237437/165965337-c8b9d5f5-31a6-4a9e-bfe2-d6b311a01486.png)
+
+
 ### AWS Site-to-Site VPN
 
 A logical connection between a VPC and on-premise network encrypted
@@ -19,6 +26,17 @@ Customer Gateway (CGW)
 - also the thing that configuration mentions
 
 VPN connection itself stores the config and connects the VGW and CGW
+
+![image](https://user-images.githubusercontent.com/88237437/165967310-ce773981-0cb0-49b1-89a9-9169e5d5ca7f.png)
+
+There is a single point of failure in this architecture, that is the Customer Gateway
+![image](https://user-images.githubusercontent.com/88237437/165967460-4665dc1a-1b0d-4af6-9fa8-361b5824963c.png)
+
+![image](https://user-images.githubusercontent.com/88237437/165967861-77e946b7-376f-4d13-9fcc-010e1c2156b6.png)
+We introduce two Customer gateways which are using two different routers (uses two different internet connections) in the customer side to make the customer side higly available
+
+Static vs Dynamic VPN
+![image](https://user-images.githubusercontent.com/88237437/165968853-494a65d1-2ef0-4ee0-ac62-ba06fde632f3.png)
 
 #### Considerations
 
