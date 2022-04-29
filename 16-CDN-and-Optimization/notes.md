@@ -127,7 +127,10 @@ Supported AWS services ONLY (CloudFront and ALB, NOT EC2)
 
 If it's not a managed service, ACM doesn't support it.
 
-Cloudfront must have a trusted and signed certificate. It can't be self signed.
+Cloudfront must have a trusted and signed certificate. It **can't be self signed**.
+
+![image](https://user-images.githubusercontent.com/88237437/165927879-69d36ca2-d4c2-44b7-ad46-9d8406001638.png)
+
 
 ### Origin Access Identity (OAI)
 
