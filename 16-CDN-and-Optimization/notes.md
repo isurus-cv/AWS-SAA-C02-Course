@@ -86,6 +86,29 @@ use them, ensure the strings are in the same order.
 
 The issue here is, even after the object is replaced with a new version, the user two is getting an old object until the cache expires.
 
+#### TTL
+
+- More frequent cache hits ==> lower load to the origin
+- Default TTL is 24hrs, which is defined in the behaviour
+- We can set **Minimum TTL** and **Maximum TTL** in the behaviour
+- It is possible to define TTL value for each of the object that the origin has
+- If an object has not assigned a TTL value, the default TTL value is set (24hrs)
+- Headers are used to set the TTL values
+- ![image](https://user-images.githubusercontent.com/88237437/165924838-0a09e89b-fce7-4e6a-84bd-b9dd987be550.png)
+- These header can be defined in these ways: Injected by application or the web server (for custom origins), Set in metadata (S3 origins)
+
+#### Invalidations
+- Cache invalidation is performed in a distribution
+- The invalidation is applied to all edge locations used by the distribution
+- This takes some time
+- Invalidation will expire cached object regradless the TTL value
+- We can define invalidation patterns. These act as filters to identify what are the objects (in the cache) to be invalidated
+- /images/wiskers1.jpg => this will invalidate only this object
+- /images/wiskers* => this will invalidate all the objects starts with "wiskers" in the images directory
+- /images/* => this will invalidate all the objects inside images directory
+- /* => this will invalidate all the objects in all directories
+- There is a cost assoicated with the invalidation operation, that does not depend on how many objects to be invalidated
+- Since this is costly, the best practise is to use versioned file names eg. wiskers1_v1.jpg, wiskers1_v2.jpg etc when updating the versions. The application must be updated with the new version of the file so that the caching TTL will not effect the users
 
 
 ### AWS Certificate Manager (ACM)
