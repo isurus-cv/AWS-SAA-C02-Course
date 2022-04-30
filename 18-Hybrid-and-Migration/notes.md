@@ -79,6 +79,8 @@ Can take weeks or month for physica cable to be installed.
 
 **Private VIF** is one VPC
 
+![image](https://user-images.githubusercontent.com/88237437/166101943-8f8be3b0-c331-45e8-9e20-e55f30c8120b.png)
+
 DX Port Provisioning is likely quick, the cross-connect takes longer.
 
 Generally use a VPN first then bring a DX in and leave VPN as backup.
@@ -88,6 +90,9 @@ Generally use a VPN first then bring a DX in and leave VPN as backup.
 It does not use public internet and provides consistently low latency.
 
 DX provides NO ENCRYPTION and needs to be managed on a per application basis.
+
+![image](https://user-images.githubusercontent.com/88237437/166102001-468a1b2a-6977-4855-9ffb-c356bfebc21c.png)
+Encryption can be added by using the site to site VPN on top of the DX
 
 #### DX Resilliancy
 
