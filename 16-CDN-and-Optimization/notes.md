@@ -187,7 +187,31 @@ The edge locations gain this identity.
 
 We then remove the explicit allows and only allow the OAI to use it.
 
+![image](https://user-images.githubusercontent.com/88237437/166098879-6befba3d-db90-4ffe-a3ad-4fc5c50769de.png)
+
+- An OAI is created and configured in the distribution
+- The distribution will share the OAI with the edge locations
+- When user wants to access the origin via the CF, the edge location will send the OAI to the origin to access the objects
+- The direct access to the origin is implicitly denied
+
+Adding OAI to an origin
+![image](https://user-images.githubusercontent.com/88237437/166099227-98808bef-da4a-47a4-bc6e-6367b5a66ace.png)
+
+bucket policy
+![image](https://user-images.githubusercontent.com/88237437/166099261-d142bc07-00a5-4cca-8d28-21afa2d0e1ff.png)
+
 Best practice is to create one per distribution to manage permissions.
+
+#### Securing Custom Origins
+
+![image](https://user-images.githubusercontent.com/88237437/166098959-496a78f4-f359-44de-bd8e-2e82280b86fd.png)
+
+- The communication between the customer and the edge location (Viewer protocol) is secured by HTTPS
+- The communication between the edge location and the origin (Origin protocol) is also secured by HTTPS
+- In order to protect the origin from accessing directly, it expect specific headers in the request to verify the request comes via an edge location
+
+The other way is to use a firewall at the origin, and only allows the communication from the cloudfront IP range
+![image](https://user-images.githubusercontent.com/88237437/166099108-3c0d0958-89a9-4ad6-b34f-ac662e9757b1.png)
 
 ### AWS Global Accelerator
 
