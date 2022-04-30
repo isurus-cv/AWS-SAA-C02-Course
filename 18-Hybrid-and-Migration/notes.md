@@ -89,6 +89,21 @@ It does not use public internet and provides consistently low latency.
 
 DX provides NO ENCRYPTION and needs to be managed on a per application basis.
 
+#### DX Resilliancy
+
+##### Evolution 1: Not Highly Available
+![image](https://user-images.githubusercontent.com/88237437/166101762-c95e7dc0-42f8-4d1a-be24-f0b25f1ddc1a.png)
+
+##### Evolution 2: Somewhat HA
+![image](https://user-images.githubusercontent.com/88237437/166101796-9e397a7e-025a-4cd0-ba1c-9256d92d87fe.png)
+
+##### Evolution 3: Better HA
+![image](https://user-images.githubusercontent.com/88237437/166101813-81c14c59-63ca-43c3-9b1a-b74f8b4463e9.png)
+
+##### Evolution 4: Extreme HA
+![image](https://user-images.githubusercontent.com/88237437/166101826-64edec1e-2d51-48be-80d4-62a257993226.png)
+
+
 ### AWS Transit Gateway (TGW)
 
 Network transit hub to connect VPCs to on premises networks
