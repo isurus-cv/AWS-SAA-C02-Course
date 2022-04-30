@@ -213,10 +213,23 @@ Best practice is to create one per distribution to manage permissions.
 The other way is to use a firewall at the origin, and only allows the communication from the cloudfront IP range
 ![image](https://user-images.githubusercontent.com/88237437/166099108-3c0d0958-89a9-4ad6-b34f-ac662e9757b1.png)
 
+### Lambda@Edge
+
+![image](https://user-images.githubusercontent.com/88237437/166099330-60af03c7-47a2-4a0e-8c21-a328a64f3a9a.png)
+
+![image](https://user-images.githubusercontent.com/88237437/166099423-39ca1bd4-7b4b-4bcc-ae2d-e72d733f9a0e.png)
+
+Use cases
+![image](https://user-images.githubusercontent.com/88237437/166099562-994d96df-8869-4dd7-aaf7-307fc048f2c9.png)
+
 ### AWS Global Accelerator
+
+The problem
+![image](https://user-images.githubusercontent.com/88237437/166099952-0dc5a8dd-99be-496f-9ada-424fb18fd608.png)
 
 Starts with 2 **anycast** IP address
 1.2.3.4 & 4.3.2.1
+![image](https://user-images.githubusercontent.com/88237437/166099967-b92c64a2-9db1-4b38-9fb8-8f9e50e3150b.png)
 
 Anycast IP's allow a single IP to be in multiple locations.
 Routing moves traffic to closest location.
