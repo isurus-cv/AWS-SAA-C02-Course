@@ -32,6 +32,8 @@ Secrets are secured via KMS which ensures role seperation.
 
 ![image](https://user-images.githubusercontent.com/88237437/165134049-2bd27755-8937-4b3d-9888-31dc4ae898de.png)
 
+**In the exam: look for keywords - Secrets, Rotation and Integration with specific Products (RDS)**
+
 ### AWS Shield and WAF (Web Application Firewall)
 
 Provides against DDoS attacks with AWS resources. This is a denial of
@@ -78,6 +80,8 @@ Once the data reaches the VPC, it has been filtered at Layer 3, 4, and 7
 already.
 
 Layer 7 filtering is only provided by WAF.
+
+![image](https://user-images.githubusercontent.com/88237437/166108133-f1f0ce4e-a301-4a68-a069-a634a4c21915.png)
 
 ### CloudHSM
 
