@@ -111,6 +111,8 @@ HSM uses
 
 KMS can use CloudHSM as a custom key store, CloudHSM integrates with KMS.
 
+![image](https://user-images.githubusercontent.com/88237437/166145919-3c9052da-f3f7-4b2c-a53e-bc6261fae191.png)
+
 HSM is not highly available and runs within one AZ. You need at least
 two HSMs and one in each AZ you use. Once HSM is in a cluster, they
 replicate all policies in sync automatically.
