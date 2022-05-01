@@ -134,3 +134,19 @@ This can be used to protect the private keys for an issuing
 certificate authority.
 
 Anything that needs to interact with non AWS products.
+
+### AWS Config
+Auditing only, cannot prevent the actions (like a CCTV, it can record all the activities but cannot prevent any disasterus activities)
+![image](https://user-images.githubusercontent.com/88237437/166145322-93eec98d-2f0d-4d44-a573-94fedac6feac.png)
+
+![image](https://user-images.githubusercontent.com/88237437/166145304-98dd19ce-5516-42c6-98b6-517ef538177d.png)
+
+### Amazon Macie
+![image](https://user-images.githubusercontent.com/88237437/166145532-63aaa060-6c1f-4c35-a6c4-c9f55fc66cd6.png)
+
+![image](https://user-images.githubusercontent.com/88237437/166145598-6ee092e4-ba1c-450a-be3e-2b3f5b079a9f.png)
+
+![image](https://user-images.githubusercontent.com/88237437/166145702-94fe7e03-bf74-4a7a-9869-cfff4de4faf9.png)
+
+![image](https://user-images.githubusercontent.com/88237437/166145865-7d80519f-1438-40b5-ba4e-539d88dfd138.png)
+
